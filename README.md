@@ -1,11 +1,14 @@
+# Marwan Ennebly — Portfolio
 
-  # Mobile Friendly Development
+Personal portfolio showcasing product design, UX case studies, and interactive experiences.
 
-  This is a code bundle for Mobile Friendly Development. The original project is available at https://www.figma.com/design/d2f9xlFC22jTeweGBMa9lQ/Mobile-Friendly-Development.
+## Tech Stack
+- React
+- TypeScript
+- Tailwind
+- Framer Motion
 
-  ## Running the code
+## Run locally
 
-  Run `npm i` to install the dependencies.
-
-  Run `npm run dev` to start the development server.
-  
+npm install
+npm run dev

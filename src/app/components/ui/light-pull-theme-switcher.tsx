@@ -1,0 +1,48 @@
+import { motion } from "motion/react";
+import { useEffect } from "react";
+
+export function LightPullThemeSwitcher() {
+    useEffect(() => {
+        // Enforce dark mode when the component mounts
+        document.documentElement.classList.add("dark");
+        return () => {
+            // Clean up when unmounting so the main site resets
+            document.documentElement.classList.remove("dark");
+        };
+    }, []);
+
+    const toggleDarkMode = () => {
+        const root = document.documentElement;
+        root.classList.toggle("dark");
+    };
+
+    return (
+      <div className="flex flex-col items-center group">
+        <div className="relative py-16 p-6 overflow-hidden">
+          <motion.div
+            drag="y"
+            dragDirectionLock
+            onDragEnd={(event, info) => {
+              if (info.offset.y > 0) {
+                toggleDarkMode();
+              }
+            }}
+            dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
+            dragTransition={{ bounceStiffness: 400, bounceDamping: 8 }}
+            dragElastic={0.25}
+            whileDrag={{ cursor: "grabbing" }}
+            className="relative bottom-0 w-8 h-8 rounded-full 
+                 bg-[radial-gradient(circle_at_center,_#facc15,_#fcd34d,_#fef9c3)] 
+                 dark:bg-[radial-gradient(circle_at_center,_#4b5563,_#1f2937,_#000)] 
+                 shadow-[0_0_20px_8px_rgba(250,204,21,0.5)] 
+                 dark:shadow-[0_0_20px_6px_rgba(31,41,55,0.7)] cursor-grab"
+          >
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-0.5 h-[9999px] bg-neutral-300 dark:bg-neutral-600"></div>
+          </motion.div>
+        </div>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400 -mt-12 whitespace-nowrap pointer-events-none select-none font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Pull down to change theme
+        </p>
+      </div>
+    );
+}

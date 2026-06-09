@@ -1,0 +1,124 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cloud drift animations — continuous one-directional movement */
+@keyframes cloud-drift-right {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(40px, -12px); }
+  100% { transform: translate(80px, 0px); }
+}
+
+@keyframes cloud-work-drift {
+  0%   { transform: translate(0px, 0px); }
+  100% { transform: translate(-80px, -10px); }
+}
+
+@keyframes cloud-drift-left {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(-40px, -10px); }
+  100% { transform: translate(-80px, 0px); }
+}
+
+.cloud-right {
+  animation: cloud-drift-right 20s linear infinite;
+}
+
+.cloud-work {
+  animation: cloud-work-drift 120s ease-in-out infinite alternate;
+}
+
+.cloud-left {
+  animation: cloud-drift-left 24s linear infinite;
+}
+
+/* ── Sky-adaptive CSS variables ── */
+/* Dawn & Morning → dark text on light backgrounds */
+:root[data-sky="dawn"],
+:root[data-sky="morning"] {
+  --sky-text: #1e293b;
+  --sky-text-80: rgba(30, 41, 59, 0.85);
+  --sky-text-70: rgba(30, 41, 59, 0.7);
+  --sky-text-50: rgba(30, 41, 59, 0.5);
+  --sky-border: rgba(30, 41, 59, 0.12);
+  --sky-surface: rgba(255, 255, 255, 0.1);
+}
+
+/* Midday, Evening, Dusk → white text on darker backgrounds */
+:root[data-sky="midday"],
+:root[data-sky="golden"],
+:root[data-sky="dusk"] {
+  --sky-text: #ffffff;
+  --sky-text-80: rgba(255, 255, 255, 0.8);
+  --sky-text-70: rgba(255, 255, 255, 0.7);
+  --sky-text-50: rgba(255, 255, 255, 0.5);
+  --sky-border: rgba(255, 255, 255, 0.1);
+  --sky-surface: rgba(255, 255, 255, 0.1);
+}
+
+/* Work Section Override — force dark theme variables (white text, light borders) inside Work Section */
+.work-section-container {
+  --sky-text: #ffffff !important;
+  --sky-text-80: rgba(255, 255, 255, 0.85) !important;
+  --sky-text-70: rgba(255, 255, 255, 0.7) !important;
+  --sky-text-50: rgba(255, 255, 255, 0.5) !important;
+  --sky-border: rgba(255, 255, 255, 0.15) !important;
+  --sky-surface: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Dusk/Golden override — darker glass surface */
+:root[data-sky="golden"],
+:root[data-sky="dusk"] {
+  --sky-surface: rgba(0, 0, 0, 0.15);
+}
+
+/* Default fallback (before JS sets data-sky) */
+:root {
+  --sky-text: #ffffff;
+  --sky-text-80: rgba(255, 255, 255, 0.8);
+  --sky-text-70: rgba(255, 255, 255, 0.7);
+  --sky-text-50: rgba(255, 255, 255, 0.5);
+  --sky-border: rgba(255, 255, 255, 0.1);
+  --sky-surface: rgba(255, 255, 255, 0.1);
+}
+
+@layer utilities {
+  .work-card, .footer-btn {
+    transition: background-color 0.6s ease, border-color 0.6s ease, color 0.6s ease;
+    background-color: var(--sky-surface) !important;
+  }
+
+  .navbar {
+    transition: background 0.8s ease, border-color 0.6s ease, color 0.6s ease;
+    background: #000000 !important;
+    border: none !important;
+  }
+
+  .featured-card-top, .featured-card-bottom {
+    transition: background 0.8s ease, border-color 0.6s ease, color 0.6s ease;
+    background: #222222 !important;
+  }
+
+  .sky-slider-container {
+    top: 75px;
+    transition: top 0.5s ease-in-out, opacity 0.3s ease;
+  }
+  .sky-slider-container.hidden-slider {
+    top: -80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sky-slider-container:not(.hidden-slider) {
+    top: 85px;
+  }
+}
+
+.work-main-card {
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}

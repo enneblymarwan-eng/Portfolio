@@ -4,7 +4,7 @@ import SplitText from './SplitText';
 import { useSky } from '../SkyContext';
 
 const GREETINGS: Record<string, string> = {
-  dawn: 'Good Early Morning,',
+  dawn: 'Good Early Morning',
   morning: 'Good Morning',
   midday: 'Good Afternoon',
   golden: 'Good Evening',

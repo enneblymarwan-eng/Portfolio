@@ -4,8 +4,13 @@ import videoHero from "../../assets/Adam AI/Adam videos/Adam Hero.mp4";
 import imgNNFramework from "../../assets/Adam AI/NNframework.png";
 import imgGoals from "../../assets/Adam AI/Goals and mesures.png";
 import imgUncanny from "../../assets/Adam AI/Uncanny Valley.png";
-import imgExplored1 from "../../assets/Adam AI/What explored1.png";
-import imgExplored2 from "../../assets/Adam AI/What explored 2.png";
+import imgExplored1 from "../../assets/Adam AI/What i explored1.png";
+import imgExplored2 from "../../assets/Adam AI/what i explored 2.png";
+import imgExplored3 from "../../assets/Adam AI/what i explored 3.png";
+import imgTrust from "../../assets/Adam AI/Trust.png";
+import imgTaskFirst from "../../assets/Adam AI/Task first.png";
+import imgSpeedEfficiency from "../../assets/Adam AI/speend and effeciancy.png";
+import imgSatisfaction from "../../assets/Adam AI/satisfaction.png";
 
 interface CaseStudyInlineProps {
   onBack: () => void;
@@ -17,9 +22,9 @@ const SECTIONS = [
   { id: 'four-principles', label: 'Four Principles' },
   { id: 'the-collision', label: 'The Collision' },
   { id: 'what-i-explored', label: 'What I Explored Anyway' },
-  { id: 'how-i-adapted', label: 'How I Adapted' },
-  { id: 'the-flows', label: 'The Flows' },
-  { id: 'what-shipped', label: 'What Shipped vs. What I Designed' },
+  { id: 'strategy-that-survived', label: 'Strategy That Survived' },
+  { id: 'the-flows', label: 'The Experience in Motion' },
+  { id: 'what-shipped', label: 'What This Project Actually Was' },
 ];
 
 function ImagePlaceholder({ label, aspect = '16/9' }: { label: string; aspect?: string }) {
@@ -75,7 +80,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
         <div className="scale-[0.8] origin-top -mt-6">
           <LightPullThemeSwitcher />
         </div>
-        
+
         {/* Close Button */}
         <button
           onClick={onBack}
@@ -218,7 +223,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
             Before I joined, the commercial team had already promised the client a branded human avatar wearing a suit with the company logo. The deal was signed around it.
           </p>
           <p className="text-[15px] font-light leading-[1.85] mb-6 text-neutral-600 dark:text-white/70">
-            I pushed back using the <strong>Uncanny Valley</strong> effect: as a humanoid figure becomes more realistic, user comfort doesn't increase linearly—it drops sharply before recovering only at full human realism. A photorealistic AI avatar sits right in that danger zone. My manager agreed with the argument, but the commercial commitment didn't move.
+            I pushed back using the <strong>Uncanny Valley</strong> effect: as a humanoid figure becomes more realistic, user comfort doesn't increase linearly it drops sharply before recovering only at full human realism. A photorealistic AI avatar sits right in that danger zone. My manager agreed with the argument, but the commercial commitment didn't move.
           </p>
           <div className="mb-6">
             <img src={imgUncanny} alt="Uncanny Valley Graph" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
@@ -241,51 +246,101 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
           <div className="mb-6 flex flex-col gap-4">
             <img src={imgExplored1} alt="Avatar Direction Exploration 1" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
             <img src={imgExplored2} alt="Avatar Direction Exploration 2" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
+            <img src={imgExplored3} alt="Avatar Direction Exploration 3" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
           </div>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            The robot was my preferred fallback; it is humanoid enough to feel personal but abstract enough to avoid the discomfort that comes with an "almost real" face. It didn't win either.
+            The abstract orb was my recommendation. No humanoid features, no uncanny valley risk — just presence without pretense. The robot was my preferred fallback: humanoid enough to feel personal, abstract enough to avoid the discomfort that comes with an almost-real face. Neither won.
           </p>
         </section>
 
-        {/* ─── HOW I ADAPTED ─── */}
-        <section id="how-i-adapted" className="mb-20">
+        {/* ─── STRATEGY THAT SURVIVED ─── */}
+        <section id="strategy-that-survived" className="mb-20">
           <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
-            How I Adapted
+            Strategy That Survived
           </h2>
-          <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            Once the decision was final, I made a choice: disengage or put on a different hat and make it as good as it could be within the brief. I chose the second. I shifted into a mode using AI-generation tools to create and evaluate avatar options, selecting the most credible and least uncanny result, then handling the lip-sync animation myself. This is the Adam that shipped.
+          <p className="text-[15px] font-light leading-[1.85] mb-12 text-neutral-600 dark:text-white/70">
+            The avatar decision was out of my hands. The UX logic underneath it wasn't. These four principles didn't stay on a framework slide they show up in specific, deliberate decisions across every flow.
           </p>
+
+          {/* Trust & Credibility */}
+          <div className="mb-14">
+            <h3 className="text-lg font-normal mb-4 tracking-tight text-neutral-900 dark:text-white">
+              Trust & Credibility
+            </h3>
+            <p className="text-[15px] font-light leading-[1.85] mb-6 text-neutral-600 dark:text-white/70">
+              Trust isn't just visual. It's what happens when something goes wrong. I designed for every failure state: internet drops, incomplete form fields, unrecognized inputs. And before any booking is confirmed, Adam gives the user a full recap of what they've submitted name, details, everything so nothing feels like it disappeared into a black box. The system earns trust by being transparent at the moments users are most likely to lose it.
+            </p>
+            <img src={imgTrust} alt="Trust & Credibility — failure states and booking recap" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
+          </div>
+
+          {/* Task-First */}
+          <div className="mb-14">
+            <h3 className="text-lg font-normal mb-4 tracking-tight text-neutral-900 dark:text-white">
+              Task-First
+            </h3>
+            <p className="text-[15px] font-light leading-[1.85] mb-6 text-neutral-600 dark:text-white/70">
+              The moment a conversation opens, Adam doesn't wait for the user to figure out what to do. Suggestion pills appear immediately pre-surfaced options that get users to their goal in one tap. No onboarding, no explanation. The interface leads with action, not with itself.
+            </p>
+            <img src={imgTaskFirst} alt="Task-First — suggestion pills on conversation open" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
+          </div>
+
+          {/* Speed & Efficiency */}
+          <div className="mb-14">
+            <h3 className="text-lg font-normal mb-4 tracking-tight text-neutral-900 dark:text-white">
+              Speed & Efficiency
+            </h3>
+            <p className="text-[15px] font-light leading-[1.85] mb-6 text-neutral-600 dark:text-white/70">
+              Users shouldn't have to restart because they're more comfortable in a different language, or because they'd rather talk than type. Language switching is available throughout the entire conversation not just at the start. The same logic applies to channel: users can move between voice and chat without losing context or starting over. Efficiency here means removing every reason to abandon.
+            </p>
+            <img src={imgSpeedEfficiency} alt="Speed & Efficiency — language and channel switching" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
+          </div>
+
+          {/* Satisfaction */}
+          <div>
+            <h3 className="text-lg font-normal mb-4 tracking-tight text-neutral-900 dark:text-white">
+              Satisfaction
+            </h3>
+            <p className="text-[15px] font-light leading-[1.85] mb-6 text-neutral-600 dark:text-white/70">
+              A successful interaction should feel complete, not just finished. After booking, users land on a clear success state that confirms what happened and what comes next. No ambiguity, no wondering if it went through. The recap before submission and the confirmation after it are two sides of the same principle: the user should always know exactly where they stand.
+            </p>
+            <img src={imgSatisfaction} alt="Satisfaction — success state and confirmation" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
+          </div>
         </section>
 
-        {/* ─── THE FLOWS ─── */}
+        <div className="w-full h-px bg-black/5 dark:bg-white/5 my-8" />
+
+        {/* ─── THE EXPERIENCE IN MOTION ─── */}
         <section id="the-flows" className="mb-20">
           <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
-            The Flows: Where the UX Lives
+            The Experience in Motion
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-6 text-neutral-600 dark:text-white/70">
-            Regardless of what avatar sits on top, the interaction design is the part of this project I'm most proud of. This is where the strategy actually shows up.
+            Static screens can show the decisions. They can't show the product alive.
           </p>
           <div className="mb-6">
             <ImagePlaceholder label="Conversational Flow Maps" aspect="16/9" />
           </div>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            The chat/booking flow maps every step, error state, and fallback path. One key decision: users can choose how they complete a booking. Adam guides them conversationally, or they can switch to a form. Both paths reach the same success state. This reduced drop-off risk for users uncomfortable with a fully conversational experience.
+            The walkthrough below covers the full interaction chat and voice, Adam responding in real time, language switching mid-conversation, a fallback state and recovery, through to booking confirmation. Each moment maps back to one of the four principles above. Watch for the suggestion pills on open, the language toggle mid-flow, the recap before submit, and the success state at the end.
           </p>
         </section>
 
-        {/* ─── WHAT SHIPPED VS WHAT I DESIGNED ─── */}
+        {/* ─── WHAT THIS PROJECT ACTUALLY WAS ─── */}
         <section id="what-shipped" className="mb-16">
           <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
-            What Shipped vs. What I Designed
+            What This Project Actually Was
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            The live product is real and running across enterprise clients in 17 countries. The conversational logic, booking flows, error handling, and voice interaction patterns reflect the original work.
+            The live product runs across enterprise clients in 17 countries. The conversational logic, booking flows, error handling, language switching, and voice interaction patterns all reflect the design work in this case study.
           </p>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            The avatar and the landing page don't. The landing page was built by developers independently. The avatar is the one the stakeholders chose.
+            The avatar and the landing page don't. The landing page was built independently by developers. The avatar is the one the stakeholders chose.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            I'm naming this directly not as a disclaimer, but because I think it's the most honest thing this case study can show. Product design in practice means delivering quality inside constraints you didn't choose. It means making the best version of something even when the brief isn't yours. And it means knowing the difference between what you can control and what you can't and putting everything into the former.
           </p>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            I'm noting this directly because product design in practice means delivering quality inside constraints you didn't choose and being clear about where those constraints were.
+            The UX logic underneath Adam is entirely mine. That's what I'm proud of.
           </p>
         </section>
 

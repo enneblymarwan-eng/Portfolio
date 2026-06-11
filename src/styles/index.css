@@ -6,11 +6,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cloud drift animations — continuous one-directional movement */
+/* Cloud drift animations */
+@keyframes cloud-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @keyframes cloud-drift-right {
   0%   { transform: translate(0px, 0px); }
-  50%  { transform: translate(40px, -12px); }
-  100% { transform: translate(80px, 0px); }
+  100% { transform: translate(80px, -12px); }
 }
 
 @keyframes cloud-work-drift {
@@ -20,20 +24,22 @@
 
 @keyframes cloud-drift-left {
   0%   { transform: translate(0px, 0px); }
-  50%  { transform: translate(-40px, -10px); }
-  100% { transform: translate(-80px, 0px); }
+  100% { transform: translate(-80px, -10px); }
 }
 
 .cloud-right {
-  animation: cloud-drift-right 20s linear infinite;
+  opacity: 0;
+  animation: cloud-fade-in 4s ease-out forwards, cloud-drift-right 40s ease-in-out infinite alternate;
 }
 
 .cloud-work {
-  animation: cloud-work-drift 120s ease-in-out infinite alternate;
+  opacity: 0;
+  animation: cloud-fade-in 4s ease-out forwards, cloud-work-drift 120s ease-in-out infinite alternate;
 }
 
 .cloud-left {
-  animation: cloud-drift-left 24s linear infinite;
+  opacity: 0;
+  animation: cloud-fade-in 4s ease-out forwards, cloud-drift-left 45s ease-in-out infinite alternate;
 }
 
 /* ── Sky-adaptive CSS variables ── */

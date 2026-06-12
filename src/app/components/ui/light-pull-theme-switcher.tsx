@@ -18,7 +18,7 @@ export function LightPullThemeSwitcher() {
 
     return (
       <div className="flex flex-col items-center group">
-        <div className="relative py-16 p-6 overflow-hidden">
+        <div className="relative py-16 p-6 overflow-visible">
           <motion.div
             drag="y"
             dragDirectionLock

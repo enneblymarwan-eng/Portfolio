@@ -1,5 +1,6 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import gsap from 'gsap';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { Puzzle, ArrowUpRight, Users } from 'lucide-react';
 import { FeaturedProject } from './FeaturedProject';
 import { CaseStudyLiveShopping } from './CaseStudyLiveShopping';
@@ -9,21 +10,26 @@ import adamB2BPreview from "../../assets/adam-b2b.png";
 import videoHeroHSE from "../../assets/HSE/HSE VIDEOS/Hero.mp4";
 import videoHeroAdam from "../../assets/Adam AI/Adam videos/Adam Hero.mp4";
 import tolotipoLogo from "../../assets/Logos/tolotipo.png";
+import cognitexLogo from "../../assets/Logos/Cognitex logo.svg";
+import hseLogo from "../../assets/Logos/Hse.png";
+import figmaIcon from "../../assets/Logos/figma.svg";
 
 const projects = [
   {
-    title: "Adam — B2B AI Agent",
-    description: "Designing a conversational AI assistant for enterprise clients navigating the full reality of product design research, exploration, stakeholder conflict and delivery under constraints.",
-    status: "Live V2 in progress",
+    title: "Adam — Conversational AI Agent for Enterprise",
+    description: "Conversational AI agent live across 17 countries — designed through stakeholder conflict and real constraints.",
+    status: "Live",
     imageSrc: adamB2BPreview,
-    videoSrc: videoHeroAdam
+    videoSrc: videoHeroAdam,
+    logoSrc: cognitexLogo
   },
   {
-    title: "Guided Live Shopping Experience",
-    description: "Designing a more intentional live shopping experience to reduce uncertainty, ease participation, and remove purchase friction.",
-    status: "Completed",
+    title: "Live Shopping — Reducing Friction at the Moment of Purchase",
+    description: "Redesigning live shopping to reduce drop-off and remove friction at the moment of purchase.",
+    status: "Case Study",
     imageSrc: liveShoppingPreview,
-    videoSrc: videoHeroHSE
+    videoSrc: videoHeroHSE,
+    logoSrc: hseLogo
   }
 ];
 
@@ -42,6 +48,15 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
   const [showCaseStudy, setShowCaseStudy] = useState(false);
   const [isInitial, setIsInitial] = useState(true);
   const hasOpenedCaseStudy = useRef(false);
+
+  // Parallax for inner sections
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const ySide = useTransform(scrollYProgress, [0, 1], [0, -20]);
+  const yTools = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   // Lock body scroll when case study is active
   useEffect(() => {
@@ -153,17 +168,16 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
   return (
     <section
       ref={sectionRef}
-      className="w-full relative text-left z-10 pb-24 md:pb-32 work-section-container scroll-mt-24 pt-4 md:pt-8"
+      className="w-full relative text-left z-10 pb-24 md:pb-32 work-section-container scroll-mt-24 pt-12 md:pt-16"
     >
-      {/* Main Content Wrapper */}
       <div
         ref={containerRef}
-        className={`w-full flex flex-col gap-12 ${
+        className={`w-full flex flex-col gap-6 ${
           isInitial ? 'opacity-0 translate-y-16 pointer-events-none' : ''
         }`}
       >
         {/* 1. Card List Container */}
-        <div
+        <motion.div
           className="max-w-3xl mx-auto w-full backdrop-blur-2xl border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-black/65"
         >
           <p
@@ -175,63 +189,129 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
 
           <div className="flex flex-col gap-2 w-full">
             {projects.map((project, index) => (
-              <div key={index} className="h-[179px] w-full">
+              <div key={index} className="h-[220px] w-full">
                 <FeaturedProject
                   title={project.title}
                   description={project.description}
                   status={project.status}
                   imageSrc={project.imageSrc}
                   videoSrc={project.videoSrc}
+                  logoSrc={(project as any).logoSrc}
                   onExpand={() => handleExpand(index)}
                 />
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* 2. Tools & Experiments Container */}
-        <div className="max-w-3xl mx-auto w-full backdrop-blur-md border border-white/5 border-dashed rounded-[24px] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.2)] flex flex-col bg-black/40">
+        {/* 2. Side Projects Container */}
+        <motion.div style={{ y: ySide }} className="max-w-3xl mx-auto w-full backdrop-blur-2xl border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-black/65 transform-gpu isolate">
           <p
-            className="font-['Poppins',sans-serif] font-normal mb-3 px-4 pt-2"
+            className="font-['Poppins',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
+            style={{ fontSize: '24px', color: 'var(--sky-text-80)', transition: 'color 0.6s ease' }}
+          >
+            Side Projects
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
+            {/* Card 1 */}
+            <div className="group relative w-full rounded-[22px] border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-500 overflow-hidden flex flex-col p-4 gap-4">
+               {/* Image */}
+               <div className="w-full h-[140px] rounded-[14px] overflow-hidden border border-white/5 relative">
+                 <img src={liveShoppingPreview} alt="Side Project 1" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+               </div>
+               
+               {/* Content */}
+               <div className="flex flex-col flex-grow">
+                 <h3 className="text-white font-['Poppins',sans-serif] font-medium text-[18px] tracking-tight mb-1">Sukoon — Mental Health for the Muslim World</h3>
+                 <p className="text-white/60 font-['Poppins',sans-serif] font-light text-[13px] leading-relaxed mb-4">
+                   Breaking the stigma around mental health in Muslim communities through an AI-powered space to speak freely, in your language, within your cultural context.
+                 </p>
+                 <div className="flex items-center gap-2 mt-auto self-start">
+                   <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-white/80 text-[10px] font-medium uppercase tracking-widest shadow-sm backdrop-blur-md">
+                     Coming Soon
+                   </span>
+                   <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/60 text-[10px] font-medium uppercase tracking-widest shadow-sm backdrop-blur-md">
+                     Design & Dev
+                   </span>
+                 </div>
+               </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative w-full rounded-[22px] border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-500 overflow-hidden flex flex-col p-4 gap-4">
+               {/* Image */}
+               <div className="w-full h-[140px] rounded-[14px] overflow-hidden border border-white/5 relative">
+                 <img src={adamB2BPreview} alt="Side Project 2" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+               </div>
+               
+               {/* Content */}
+               <div className="flex flex-col flex-grow">
+                 <h3 className="text-white font-['Poppins',sans-serif] font-medium text-[18px] tracking-tight mb-1">CrewPave — Asphalt Calculator for Construction Teams</h3>
+                 <p className="text-white/60 font-['Poppins',sans-serif] font-light text-[13px] leading-relaxed mb-4">
+                   Helping foremen and contractors calculate asphalt needs accurately using satellite imagery — removing guesswork from the job site.
+                 </p>
+                 <div className="flex items-center gap-2 mt-auto self-start">
+                   <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-white/80 text-[10px] font-medium uppercase tracking-widest shadow-sm backdrop-blur-md">
+                     Coming Soon
+                   </span>
+                   <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/60 text-[10px] font-medium uppercase tracking-widest shadow-sm backdrop-blur-md">
+                     Design & Dev
+                   </span>
+                 </div>
+               </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* 3. Tools & Experiments Container */}
+        <motion.div style={{ y: yTools }} className="max-w-3xl mx-auto w-full backdrop-blur-2xl border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-black/65 transform-gpu isolate">
+          <p
+            className="font-['Poppins',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
             style={{ fontSize: '24px', color: 'var(--sky-text-80)', transition: 'color 0.6s ease' }}
           >
             Tools & Experiments
           </p>
 
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex flex-col gap-3 w-full">
             <a
               href="https://www.figma.com/community/plugin/1443304083956683667/tooltipo?q_id=02e11280-1cfb-469c-9aad-5ada9df55c05"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative h-[88px] w-full rounded-[20px] border border-white/5 bg-black/20 hover:bg-black/40 transition-all duration-300 flex items-center px-4 md:px-5 gap-4 overflow-hidden"
+              className="group relative w-full rounded-[22px] border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:from-white/10 hover:to-white/5 transition-colors duration-500 flex flex-col md:flex-row items-start md:items-start p-5 gap-5 overflow-hidden"
             >
               {/* Plugin Icon */}
-              <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0 shadow-inner overflow-hidden border border-white/10 bg-white/5">
+              <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0 shadow-lg overflow-hidden border border-white/10 bg-white/5 group-hover:scale-105 transition-transform duration-500">
                 <img src={tolotipoLogo} alt="Tooltipo Logo" className="w-full h-full object-cover" />
               </div>
 
               {/* Content */}
-              <div className="flex flex-col flex-grow min-w-0">
-                <div className="flex items-center gap-3 mb-1 flex-wrap">
-                  <h3 className="text-white font-['Poppins',sans-serif] font-medium text-[17px] truncate">Tooltipo</h3>
-                  <span className="px-2 py-0.5 rounded-md bg-white/10 border border-white/5 text-white/70 text-[10px] font-medium uppercase tracking-widest shrink-0">Figma Plugin</span>
+              <div className="flex flex-col flex-grow min-w-0 pr-8 md:pr-0">
+                <h3 className="text-white font-['Poppins',sans-serif] font-medium text-[20px] tracking-tight mb-1">Tooltipo</h3>
+                <p className="text-white/60 font-['Poppins',sans-serif] font-light text-[14px] leading-relaxed mb-3">
+                  A Figma plugin for crafting and managing tooltips seamlessly within your design workflow.
+                </p>
+                
+                {/* Meta details at the bottom */}
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-white/10 border border-white/5 text-white/70 text-[10px] font-medium uppercase tracking-widest shrink-0">
+                    <img src={figmaIcon} alt="Figma" className="w-3 h-3 opacity-90" />
+                    Figma Plugin
+                  </span>
                   <div className="flex items-center gap-1.5 text-white/40 text-[11px] font-['Poppins',sans-serif] shrink-0">
                     <Users size={12} />
                     <span>667 users</span>
                   </div>
                 </div>
-                <p className="text-white/50 font-['Poppins',sans-serif] font-light text-[13px] truncate leading-tight">
-                  A Figma plugin for crafting and managing tooltips, published on Figma Community
-                </p>
               </div>
 
               {/* Arrow */}
-              <div className="shrink-0 text-white/30 group-hover:text-white/80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300">
-                <ArrowUpRight size={20} />
+              <div className="absolute top-5 right-5 shrink-0 text-white/30 group-hover:text-white/90 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+                <ArrowUpRight size={22} />
               </div>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* 2. Case Study Overlay */}

@@ -8,10 +8,11 @@ interface FeaturedProjectProps {
   status?: string;
   imageSrc?: string;
   videoSrc?: string;
+  logoSrc?: string;
   onExpand?: () => void;
 }
 
-export function FeaturedProject({ title, description, status, imageSrc = imgPlaceholder, videoSrc, onExpand }: FeaturedProjectProps) {
+export function FeaturedProject({ title, description, status, imageSrc = imgPlaceholder, videoSrc, logoSrc, onExpand }: FeaturedProjectProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -37,6 +38,13 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
       {/* Left Text Content */}
       <div className="w-[55%] p-5 md:p-6 flex flex-col justify-between z-10">
         <div>
+          {logoSrc && (
+            <img 
+              src={logoSrc} 
+              alt="Client Logo" 
+              className="h-[18px] w-auto object-contain object-left mb-3" 
+            />
+          )}
           <h3 
             className="font-['Poppins',sans-serif] font-medium pr-2 mb-2"
             style={{ fontSize: '15px', lineHeight: 1.4, color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
@@ -54,22 +62,24 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
         </div>
         
         {/* Status */}
-        {status && (
-          <div 
-            className="self-start mt-4 px-3 py-1 rounded-full border text-[10px] uppercase tracking-wider font-medium transition-colors duration-600"
-            style={{
-              borderColor: 'var(--sky-border)',
-              color: 'var(--sky-text-80)',
-              backgroundColor: 'var(--sky-surface)'
-            }}
-          >
-            {status}
-          </div>
-        )}
+        <div className="flex items-center gap-3 mt-4 self-start">
+          {status && (
+            <div 
+              className="px-3 py-1 rounded-full border text-[10px] uppercase tracking-wider font-medium transition-colors duration-600"
+              style={{
+                borderColor: 'var(--sky-border)',
+                color: 'var(--sky-text-80)',
+                backgroundColor: 'var(--sky-surface)'
+              }}
+            >
+              {status}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Right Image/Video Container */}
-      <div className="h-full absolute right-0 top-0 p-1 aspect-video hidden sm:block w-[45%] sm:w-auto">
+      <div className="h-full absolute right-0 top-0 p-1 hidden sm:block w-[40%] md:w-[45%]">
         <div className="w-full h-full overflow-hidden rounded-[16px] relative">
           {videoSrc ? (
             <motion.video

@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { LightPullThemeSwitcher } from './ui/light-pull-theme-switcher';
 import videoHero from "../../assets/Adam AI/Adam videos/Adam Hero.mp4";
+import videoMotion from "../../assets/Adam AI/Adam videos/Adam - Experience in motion.mp4";
+import cognitexLogo from "../../assets/Logos/Cognitex logo.svg";
 import imgNNFramework from "../../assets/Adam AI/NNframework.png";
 import imgGoals from "../../assets/Adam AI/Goals and mesures.png";
 import imgUncanny from "../../assets/Adam AI/Uncanny Valley.png";
@@ -18,11 +20,13 @@ interface CaseStudyInlineProps {
 
 const SECTIONS = [
   { id: 'the-problem', label: 'The Problem' },
+  { id: 'who-we-designing-for', label: 'Who We\'re Designing For' },
   { id: 'measuring-success', label: 'Measuring Success' },
   { id: 'four-principles', label: 'Four Principles' },
   { id: 'the-collision', label: 'The Collision' },
   { id: 'what-i-explored', label: 'What I Explored Anyway' },
   { id: 'strategy-that-survived', label: 'Strategy That Survived' },
+  { id: 'complexity-behind-simplicity', label: 'Complexity Behind Simplicity' },
   { id: 'the-flows', label: 'The Experience in Motion' },
   { id: 'what-shipped', label: 'What This Project Actually Was' },
 ];
@@ -127,19 +131,21 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
         <h1
           className="text-[36px] md:text-[48px] font-normal leading-[1.1] mb-4 tracking-tight text-left text-neutral-900 dark:text-white transition-colors duration-500"
         >
-          Adam - B2B AI Agent
+          Adam — Conversational AI Agent for Enterprise
         </h1>
         <p
           className="text-base md:text-lg font-light mb-16 text-left max-w-lg leading-relaxed text-neutral-600 dark:text-white/70 transition-colors duration-500"
         >
-          Designing a conversational AI assistant for enterprise clients navigating the full reality of product design research, exploration, stakeholder conflict and delivery under constraints.
+          Conversational AI agent live across 17 countries — designed through stakeholder conflict and real constraints.
         </p>
 
         {/* Meta */}
         <div className="flex flex-wrap gap-8 md:gap-12 mb-20">
           <div className="text-left">
             <h4 className="text-[11px] font-normal mb-2 uppercase tracking-wider text-neutral-500 dark:text-white/50 transition-colors duration-500">Client</h4>
-            <div className="inline-block bg-[#F03125] text-white font-bold text-lg px-2.5 py-0.5 tracking-tighter">LEYTON</div>
+            <div className="flex items-center h-[28px]">
+              <img src={cognitexLogo} alt="Cognitex" className="h-[22px] object-contain opacity-90 dark:brightness-200 dark:contrast-100" />
+            </div>
           </div>
           <div className="text-left">
             <h4 className="text-[11px] font-normal mb-2 uppercase tracking-wider text-neutral-500 dark:text-white/50 transition-colors duration-500">Role</h4>
@@ -147,12 +153,25 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
           </div>
           <div className="text-left">
             <h4 className="text-[11px] font-normal mb-2 uppercase tracking-wider text-neutral-500 dark:text-white/50 transition-colors duration-500">Scope</h4>
-            <p className="text-[14px] font-light text-neutral-700 dark:text-white/80 transition-colors duration-500">UX Strategy, Flows V1 & V2</p>
+            <p className="text-[14px] font-light text-neutral-700 dark:text-white/80 transition-colors duration-500">UX Strategy, Flows V1</p>
           </div>
           <div className="text-left">
             <h4 className="text-[11px] font-normal mb-2 uppercase tracking-wider text-neutral-500 dark:text-white/50 transition-colors duration-500">Status</h4>
-            <p className="text-[14px] font-light text-neutral-700 dark:text-white/80 transition-colors duration-500">Live V2 in progress</p>
+            <p className="text-[14px] font-light text-neutral-700 dark:text-white/80 transition-colors duration-500">Live</p>
           </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="relative mb-16 px-5 py-4 rounded-[14px] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.04] overflow-hidden">
+          {/* Gradient glow */}
+          <div
+            className="pointer-events-none absolute bottom-0 right-0 w-48 h-28"
+            style={{ background: 'radial-gradient(ellipse at bottom right, rgba(0,251,167,0.18) 0%, transparent 70%)' }}
+          />
+          <p className="relative text-[11px] font-normal uppercase tracking-widest text-neutral-400 dark:text-white/35 mb-1.5">Disclaimer</p>
+          <p className="relative text-[13px] font-light leading-[1.8] text-neutral-500 dark:text-white/45">
+            This case study focuses on the UX strategy, design decisions, and constraints that shaped Adam. Discovery, research, and client onboarding context have been condensed for brevity. The screens shown reflect the CognitX implementation. Each client deployment is rebranded and customised.
+          </p>
         </div>
 
         {/* Hero Video */}
@@ -180,6 +199,25 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
           </p>
         </section>
 
+        {/* ─── WHO WE'RE DESIGNING FOR ─── */}
+        <section id="who-we-designing-for" className="mb-20">
+          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+            Who We're Designing For
+          </h2>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            Adam is a white-label conversational AI agent. Every deployment is embedded into a client's existing website, rebranded, re-avatared, and tailored to their industry. That means the design had to work for two audiences at once.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            The business, enterprise clients across sectors like insurance, finance, and consulting, needed to trust Adam enough to put it on their website and behind their brand. Any friction, any failure state that felt unpolished, reflects on them, not on CognitX.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            The end user, a visitor on that client's website, has no context for Adam. They don't know it's AI-powered, they don't know who built it. They just have a question, a meeting to book, or a form to fill. The design had to earn their trust in seconds, without explanation.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
+            Designing for both meant that every decision, the flows, the error states, the fallback paths, had to hold up under two very different kinds of scrutiny.
+          </p>
+        </section>
+
         {/* ─── MEASURING SUCCESS ─── */}
         <section id="measuring-success" className="mb-20">
           <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
@@ -188,8 +226,11 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
           <div className="mb-6">
             <img src={imgNNFramework} alt="UX Strategy Pyramid - NN/g Framework" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
           </div>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            Before designing any flows, I defined how success would be measured. The NN/g UX strategy framework helped translate business goals into experience principles and measurable outcomes. Each metric justified with research benchmarks, not gut feeling.
+          </p>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            I used the Nielsen Norman Group UX strategy framework to define measurable goals tied to business outcomes . Each metric justified with research benchmarks, not gut feeling.
+            Adam had to change user behavior, getting people to trust and rely on a conversational AI for real tasks. That's not a usability problem, it's a strategy problem. The NN/g pyramid gave me a way to define success at every level, from functionality up to trust.
           </p>
         </section>
 
@@ -202,10 +243,10 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
             These four principles define what success looks like for Adam from an experience perspective. They are the foundation behind every design and product decision:
           </p>
           <ol className="list-decimal list-inside text-[15px] font-light leading-[1.85] space-y-2 text-neutral-600 dark:text-white/70">
-            <li>Trust & Clarity</li>
-            <li>Instant Value</li>
-            <li>Goals & Measures</li>
-            <li>[Principle 4]</li>
+            <li>Trust &amp; Credibility</li>
+            <li>Task-First</li>
+            <li>Speed &amp; Efficiency</li>
+            <li>Satisfaction</li>
           </ol>
           <div className="mt-8 mb-6">
             <img src={imgGoals} alt="Goals and Measures" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
@@ -307,6 +348,34 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
           </div>
         </section>
 
+        {/* ─── COMPLEXITY BEHIND SIMPLICITY ─── */}
+        <section id="complexity-behind-simplicity" className="mb-20">
+          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+            Complexity Behind Simplicity
+          </h2>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            A conversational AI agent looks simple on the surface. One widget, one avatar, one booking flow. But designing for real users meant accounting for every way the interaction could break down or go sideways.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            A seemingly simple booking flow required handling:
+          </p>
+          <ul className="list-disc list-inside text-[15px] font-light leading-[1.85] space-y-2 mb-6 text-neutral-600 dark:text-white/70">
+            <li>Language changes mid-conversation</li>
+            <li>Switching between voice and chat without losing context</li>
+            <li>Incomplete or incorrectly formatted user information</li>
+            <li>Unavailable meeting slots</li>
+            <li>Unsupported or out-of-scope requests</li>
+            <li>Connection loss and recovery</li>
+            <li>Human handoff when Adam couldn't resolve the request</li>
+          </ul>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            Each scenario had its own fallback state, its own recovery path, and its own way of keeping the user informed without making them feel like something went wrong. The goal was a system that felt effortless even when it wasn't.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
+            Below is a simplified map of how Adam processes a user interaction from entry to resolution.
+          </p>
+        </section>
+
         <div className="w-full h-px bg-black/5 dark:bg-white/5 my-8" />
 
         {/* ─── THE EXPERIENCE IN MOTION ─── */}
@@ -318,10 +387,17 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
             Static screens can show the decisions. They can't show the product alive.
           </p>
           <div className="mb-6">
-            <ImagePlaceholder label="Conversational Flow Maps" aspect="16/9" />
+            <video
+              src={videoMotion}
+              className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </div>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            The walkthrough below covers the full interaction chat and voice, Adam responding in real time, language switching mid-conversation, a fallback state and recovery, through to booking confirmation. Each moment maps back to one of the four principles above. Watch for the suggestion pills on open, the language toggle mid-flow, the recap before submit, and the success state at the end.
+            The walkthrough below gives you a feel for the interaction — Adam responding in real time, across both chat and voice. The full flows, edge cases, and fallback states are covered in the sections above.
           </p>
         </section>
 

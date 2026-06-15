@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { LightPullThemeSwitcher } from './ui/light-pull-theme-switcher';
+import hseLogo from "../../assets/Logos/Hse.png";
 import imgHero from "../../assets/HSE/HSE - Hero.png";
 import imgBuildingBlocks from "../../assets/HSE/Building Blocks.png";
 import imgHseScreen1 from "../../assets/HSE/Hse screen 1.png";
@@ -123,19 +124,21 @@ export function CaseStudyLiveShopping({ onBack }: CaseStudyInlineProps) {
         <h1
           className="text-[36px] md:text-[48px] font-normal leading-[1.1] mb-4 tracking-tight text-left text-neutral-900 dark:text-white transition-colors duration-500"
         >
-          Guided Live Shopping<br />Experience
+          Live Shopping — Reducing Friction at the Moment of Purchase
         </h1>
         <p
           className="text-base md:text-lg font-light mb-16 text-left max-w-lg leading-relaxed text-neutral-600 dark:text-white/70 transition-colors duration-500"
         >
-          Designing a more intentional live shopping experience
+          Redesigning live shopping to reduce drop-off and remove friction at the moment of purchase.
         </p>
 
         {/* Meta */}
         <div className="flex flex-wrap gap-8 md:gap-12 mb-20">
           <div className="text-left">
             <h4 className="text-[11px] font-normal mb-2 uppercase tracking-wider text-neutral-500 dark:text-white/50 transition-colors duration-500">Client</h4>
-            <div className="inline-block bg-[#F03125] text-white font-bold text-lg px-2.5 py-0.5 tracking-tighter">HSE</div>
+            <div className="flex items-center h-[28px]">
+              <img src={hseLogo} alt="HSE" className="h-[24px] object-contain" />
+            </div>
           </div>
           <div className="text-left">
             <h4 className="text-[11px] font-normal mb-2 uppercase tracking-wider text-neutral-500 dark:text-white/50 transition-colors duration-500">Role</h4>

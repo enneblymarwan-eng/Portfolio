@@ -94,7 +94,7 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
           <SplitText
             key={`merged-${state.id}`}
             text={`${greeting}.\n${line1}`}
-            className="font-['Poppins',sans-serif] font-extralight text-[36px] leading-[44px] tracking-tight whitespace-pre-line"
+            className="font-['Poppins',sans-serif] font-extralight text-[32px] leading-[40px] tracking-tight whitespace-pre-line"
             delay={30}
             duration={0.8}
             ease="power3.out"
@@ -110,7 +110,7 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
           <SplitText
             key={`line2-${state.id}`}
             text={line2}
-            className="font-['Poppins',sans-serif] font-light text-[24px] leading-[32px] tracking-[-0.01em]"
+            className="font-['Poppins',sans-serif] font-light text-[20px] leading-[28px] tracking-[-0.01em]"
             delay={30}
             duration={0.8}
             ease="power3.out"

@@ -7,6 +7,8 @@ import { CaseStudyLiveShopping } from './CaseStudyLiveShopping';
 import { CaseStudyAdam } from './CaseStudyAdam';
 import liveShoppingPreview from "../../assets/live-shopping.png";
 import adamB2BPreview from "../../assets/adam-b2b.png";
+import sukounPreview from "../../assets/Side projects/Sukoun.png";
+import crewpavePreview from "../../assets/Side projects/Crewpave.png";
 import videoHeroHSE from "../../assets/HSE/HSE VIDEOS/Hero.mp4";
 import videoHeroAdam from "../../assets/Adam AI/Adam videos/Adam Hero.mp4";
 import tolotipoLogo from "../../assets/Logos/tolotipo.png";
@@ -218,7 +220,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
             <div className="group relative w-full rounded-[22px] border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-500 overflow-hidden flex flex-col p-4 gap-4">
                {/* Image */}
                <div className="w-full h-[140px] rounded-[14px] overflow-hidden border border-white/5 relative">
-                 <img src={liveShoppingPreview} alt="Side Project 1" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                 <img src={sukounPreview} alt="Sukoon" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                </div>
                
                {/* Content */}
@@ -242,7 +244,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
             <div className="group relative w-full rounded-[22px] border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-500 overflow-hidden flex flex-col p-4 gap-4">
                {/* Image */}
                <div className="w-full h-[140px] rounded-[14px] overflow-hidden border border-white/5 relative">
-                 <img src={adamB2BPreview} alt="Side Project 2" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                 <img src={crewpavePreview} alt="CrewPave" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                </div>
                
                {/* Content */}

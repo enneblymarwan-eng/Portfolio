@@ -11,6 +11,8 @@ import sukounPreview from "../../assets/Side projects/Sukoun.png";
 import crewpavePreview from "../../assets/Side projects/Crewpave.png";
 import videoHeroHSE from "../../assets/HSE/HSE VIDEOS/Hero.mp4";
 import videoHeroAdam from "../../assets/Adam AI/Adam videos/Adam Hero.mp4";
+import videoStargate from "../../assets/Stargate/Stargate.mp4";
+import leytonLogo from "../../assets/Stargate/Leyton logo.svg";
 import tolotipoLogo from "../../assets/Logos/tolotipo.png";
 import cognitexLogo from "../../assets/Logos/Cognitex logo.svg";
 import hseLogo from "../../assets/Logos/Hse.png";
@@ -32,6 +34,14 @@ const projects = [
     imageSrc: liveShoppingPreview,
     videoSrc: videoHeroHSE,
     logoSrc: hseLogo
+  },
+  {
+    title: "Stargate — AI Platform for Internal Tool Discovery",
+    description: "Helping consultants find the right internal tool for the job — powered by AI, built for the way they actually work.",
+    status: "COMING SOON",
+    videoSrc: videoStargate,
+    logoSrc: leytonLogo,
+    isClickable: false
   }
 ];
 
@@ -191,7 +201,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
 
           <div className="flex flex-col gap-2 w-full">
             {projects.map((project, index) => (
-              <div key={index} className="h-[220px] w-full">
+              <div key={index} className="h-auto md:h-[220px] w-full">
                 <FeaturedProject
                   title={project.title}
                   description={project.description}
@@ -199,7 +209,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
                   imageSrc={project.imageSrc}
                   videoSrc={project.videoSrc}
                   logoSrc={(project as any).logoSrc}
-                  onExpand={() => handleExpand(index)}
+                  onExpand={(project as any).isClickable === false ? undefined : () => handleExpand(index)}
                 />
               </div>
             ))}

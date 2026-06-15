@@ -33,10 +33,36 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
     <div 
       ref={cardRef}
       onClick={handleClick}
-      className="w-full h-full rounded-[20px] overflow-hidden bg-black/40 hover:bg-black/60 border border-white/5 border-dashed cursor-pointer outline-none transition-all duration-300 hover:scale-[1.01] flex flex-row relative shadow-[0_4px_20px_rgba(0,0,0,0.15)] group"
+      className={`w-full h-auto md:h-full min-h-[380px] md:min-h-0 rounded-[20px] overflow-hidden bg-black/40 hover:bg-black/60 border border-white/5 border-dashed outline-none transition-all duration-300 flex flex-col md:flex-row relative shadow-[0_4px_20px_rgba(0,0,0,0.15)] group ${onExpand ? 'cursor-pointer hover:scale-[1.01]' : ''}`}
     >
-      {/* Left Text Content */}
-      <div className="w-[55%] p-5 md:p-6 flex flex-col justify-between z-10">
+      {/* Top/Right Image/Video Container */}
+      <div className="w-full h-[180px] p-2 md:h-full md:absolute md:right-0 md:top-0 md:p-1 md:w-[45%] shrink-0 block">
+        <div className="w-full h-full overflow-hidden rounded-[16px] relative">
+          {videoSrc ? (
+            <motion.video
+              src={videoSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ y: imageY, scale: 1.05 }}
+              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-[1.1]"
+            />
+          ) : (
+            <motion.img 
+              src={imageSrc} 
+              alt="Project Preview" 
+              style={{ y: imageY, scale: 1.05 }}
+              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-[1.1]"
+            />
+          )}
+          {/* Subtle gradient overlay to blend edge */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent opacity-0 md:opacity-100 mix-blend-overlay pointer-events-none" />
+        </div>
+      </div>
+
+      {/* Bottom/Left Text Content */}
+      <div className="w-full md:w-[55%] p-5 md:p-6 pt-2 md:pt-6 flex flex-col justify-between z-10">
         <div>
           {logoSrc && (
             <img 
@@ -46,14 +72,14 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
             />
           )}
           <h3 
-            className="font-['Poppins',sans-serif] font-medium pr-2 mb-2"
+            className="font-['Poppins',sans-serif] font-medium pr-2 md:pr-6 mb-2"
             style={{ fontSize: '15px', lineHeight: 1.4, color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
           >
             {title}
           </h3>
           {description && (
             <p 
-              className="font-['Poppins',sans-serif] font-light text-[11px] md:text-[12px] leading-relaxed pr-4 line-clamp-2 md:line-clamp-3"
+              className="font-['Poppins',sans-serif] font-light text-[11px] md:text-[12px] leading-relaxed pr-4 md:pr-6 line-clamp-2 md:line-clamp-3"
               style={{ color: 'var(--sky-text-70)', transition: 'color 0.6s ease' }}
             >
               {description}
@@ -74,30 +100,6 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
             >
               {status}
             </div>
-          )}
-        </div>
-      </div>
-
-      {/* Right Image/Video Container */}
-      <div className="h-full absolute right-0 top-0 p-1 hidden sm:block w-[40%] md:w-[45%]">
-        <div className="w-full h-full overflow-hidden rounded-[16px] relative">
-          {videoSrc ? (
-            <motion.video
-              src={videoSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ y: imageY, scale: 1.05 }}
-              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-[1.1]"
-            />
-          ) : (
-            <motion.img 
-              src={imageSrc} 
-              alt="Project Preview" 
-              style={{ y: imageY, scale: 1.05 }}
-              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-[1.1]"
-            />
           )}
         </div>
       </div>

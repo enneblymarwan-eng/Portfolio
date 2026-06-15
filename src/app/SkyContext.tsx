@@ -20,8 +20,17 @@ const SkyContext = createContext<SkyContextType>({
   state: LIGHTING_STATES[2],
 });
 
+function getInitialTimeIndex(): number {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 7) return 0;   // dawn
+  if (hour >= 7 && hour < 12) return 1;  // morning
+  if (hour >= 12 && hour < 17) return 2; // midday
+  if (hour >= 17 && hour < 20) return 3; // golden
+  return 4;                               // dusk
+}
+
 export function SkyProvider({ children }: { children: ReactNode }) {
-  const [timeIndex, setTimeIndex] = useState(2);
+  const [timeIndex, setTimeIndex] = useState(getInitialTimeIndex);
   const state = LIGHTING_STATES[timeIndex];
 
   useEffect(() => {

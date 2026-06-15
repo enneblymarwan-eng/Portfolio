@@ -5,33 +5,33 @@ import { useSky } from '../SkyContext';
 import { motion, useScroll, useTransform } from 'motion/react';
 
 const GREETINGS: Record<string, string> = {
-  dawn: 'Good Early Morning',
-  morning: 'Good Morning',
-  midday: 'Good Afternoon',
-  golden: 'Good Evening',
-  dusk: 'Good Night',
+  dawn: "You're up before the sun. Respect.",
+  morning: "Good Morning. Coffee's brewing, ideas are moving.",
+  midday: "Good Afternoon. Peak hours. Let's not waste them.",
+  golden: "Golden Hour. The best ideas look obvious in hindsight.",
+  dusk: "Good Evening. Still here? So am I.",
 };
 
 const DESCRIPTIONS: Record<string, { line1: string; line2: string }> = {
   dawn: {
-    line1: "Still dark outside. I'm probably asleep. leave a message and I'll get back to you before the coffee's cold.",
-    line2: "I'm Marwan, a product designer based in Casablanca with 7 years of experience crafting digital experiences that are intuitive, meaningful, and a delight to use."
+    line1: "",
+    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. Since you're already ahead of schedule — let's make something worthwhile."
   },
   morning: {
-    line1: "Coffee's brewing, Figma's loading.",
-    line2: "I'm Marwan, a product designer based in Casablanca, with 7 years of turning messy problems into experiences people actually enjoy using. Good time to reach out. I respond fast in the morning."
+    line1: "",
+    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. If you have a problem worth solving, let's talk."
   },
   midday: {
-    line1: "Deep in work mode.",
+    line1: "",
     line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. If you have a problem worth solving, let's talk."
   },
   golden: {
-    line1: "Winding down, but the ideas don't stop.",
+    line1: "",
     line2: "I'm Marwan, a product designer based in Casablanca. After 7 years in this craft, I still get excited about a blank frame and a hard problem. That probably won't change."
   },
   dusk: {
-    line1: "Either wrapping up a late session or staring at a screen wondering if that spacing is off by 1px.",
-    line2: "I'm Marwan, a product designer based in Casablanca with 7 years of experience, and still the last one to close Figma."
+    line1: "",
+    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. If you're building something meaningful, I'd love to hear about it."
   }
 };
 
@@ -88,13 +88,13 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
   }, [hidden]);
 
   return (
-    <section ref={sectionRef} className="relative px-4 md:px-8 lg:px-16 pt-[240px] md:pt-[280px] pb-4 md:pb-8 text-left hero-root">
+    <section ref={sectionRef} className="relative px-4 md:px-8 lg:px-16 pt-[220px] md:pt-[280px] pb-4 md:pb-8 text-left hero-root">
       <motion.div className="max-w-3xl mx-auto w-full" style={{ y, opacity }}>
         <div style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
           <SplitText
             key={`merged-${state.id}`}
-            text={`${greeting}.\n${line1}`}
-            className="font-['Poppins',sans-serif] font-extralight text-[32px] leading-[40px] tracking-tight whitespace-pre-line"
+            text={line1 ? `${greeting}\n${line1}` : greeting}
+            className="font-['Poppins',sans-serif] font-extralight text-[26px] md:text-[32px] leading-[34px] md:leading-[40px] tracking-tight whitespace-pre-line"
             delay={30}
             duration={0.8}
             ease="power3.out"
@@ -110,7 +110,7 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
           <SplitText
             key={`line2-${state.id}`}
             text={line2}
-            className="font-['Poppins',sans-serif] font-light text-[20px] leading-[28px] tracking-[-0.01em]"
+            className="font-['Poppins',sans-serif] font-light text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
             delay={30}
             duration={0.8}
             ease="power3.out"

@@ -28,7 +28,8 @@ const SECTIONS = [
   { id: 'strategy-that-survived', label: 'Strategy That Survived' },
   { id: 'complexity-behind-simplicity', label: 'Complexity Behind Simplicity' },
   { id: 'the-flows', label: 'The Experience in Motion' },
-  { id: 'what-shipped', label: 'What This Project Actually Was' },
+  { id: 'validating-the-experience', label: 'Validating the Experience' },
+  { id: 'what-shipped', label: 'What This Project Became' },
 ];
 
 function ImagePlaceholder({ label, aspect = '16/9' }: { label: string; aspect?: string }) {
@@ -81,7 +82,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
       {/* Top Right Controls */}
       <div className="fixed top-10 right-10 md:top-12 md:right-12 z-50 flex items-start gap-4">
         {/* Theme Switcher */}
-        <div className="scale-[0.8] origin-top -mt-6">
+        <div className="scale-[0.8] origin-top -mt-6 hidden md:block">
           <LightPullThemeSwitcher />
         </div>
 
@@ -125,7 +126,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
       </nav>
 
       {/* Main Content */}
-      <div className="max-w-3xl mx-auto w-full px-6 md:px-0 pt-[200px] md:pt-24 pb-20">
+      <div className="max-w-3xl mx-auto w-full px-6 md:px-0 pt-[120px] md:pt-24 pb-20">
 
         {/* Title */}
         <h1
@@ -401,22 +402,41 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
           </p>
         </section>
 
-        {/* ─── WHAT THIS PROJECT ACTUALLY WAS ─── */}
-        <section id="what-shipped" className="mb-16">
+        {/* ─── VALIDATING THE EXPERIENCE ─── */}
+        <section id="validating-the-experience" className="mb-20">
           <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
-            What This Project Actually Was
+            Validating the Experience
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            The live product runs across enterprise clients in 17 countries. The conversational logic, booking flows, error handling, language switching, and voice interaction patterns all reflect the design work in this case study.
+            Before launch, Adam was tested across multiple conversational scenarios, including booking flows, voice interactions, language switching, and error recovery.
           </p>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            The avatar and the landing page don't. The landing page was built independently by developers. The avatar is the one the stakeholders chose.
+            The feedback was generally positive, particularly around the speed of completing tasks and the clarity of the booking process. The testing also surfaced areas where the experience and technical implementation weren't fully aligned.
           </p>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            I'm naming this directly not as a disclaimer, but because I think it's the most honest thing this case study can show. Product design in practice means delivering quality inside constraints you didn't choose. It means making the best version of something even when the brief isn't yours. And it means knowing the difference between what you can control and what you can't and putting everything into the former.
+            One example was language switching during an active conversation. While the original UX supported changing languages at any point, technical limitations made maintaining context across languages unreliable. Rather than introducing inconsistent behavior, the feature was removed and the experience adjusted accordingly.
           </p>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            The UX logic underneath Adam is entirely mine. That's what I'm proud of.
+            The process reinforced an important lesson: designing conversational AI isn't just about creating ideal flows. It's about balancing user needs, technical reality, and business requirements without compromising trust.
+          </p>
+        </section>
+
+        {/* ─── WHAT THIS PROJECT BECAME ─── */}
+        <section id="what-shipped" className="mb-16">
+          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+            What This Project Became
+          </h2>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            Adam is now deployed across enterprise clients in 17 countries, supporting real users across booking, qualification, and support workflows.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            The conversational system, booking logic, error handling, and multilingual interaction patterns reflect the design decisions outlined in this case study and are actively used in production environments.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
+            Some surface elements, such as the avatar and landing page, were defined by earlier commercial commitments or implemented independently during client customization. The core interaction design and conversational logic were developed as part of the product design scope.
+          </p>
+          <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
+            This case study focuses on that layer: the experience architecture that makes the system usable, resilient, and scalable across different contexts.
           </p>
         </section>
 

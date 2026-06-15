@@ -37,11 +37,11 @@ export function Footer() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          href="mailto:hello@marwan.design"
+          href="mailto:enneblymarwan@gmail.com"
           className="flex items-center justify-center gap-2 border backdrop-blur-md px-8 py-4 rounded-full font-medium tracking-wide hover:brightness-110 transition-all font-['Poppins',sans-serif] footer-btn"
           style={{ borderColor: 'var(--sky-border)', color: 'var(--sky-text)', transition: 'color 0.6s ease, border-color 0.6s ease' }}
         >
-          Get in touch <ArrowRight className="w-5 h-5 ml-1" />
+          Get in touch: enneblymarwan@gmail.com <ArrowRight className="w-5 h-5 ml-1" />
         </motion.a>
 
         {/* Separator line */}
@@ -65,10 +65,7 @@ export function Footer() {
         >
           <p>© {new Date().getFullYear()} Marwan. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:opacity-100 transition-opacity" style={{ color: 'var(--sky-text-50)' }}>LinkedIn</a>
-            <a href="#" className="hover:opacity-100 transition-opacity" style={{ color: 'var(--sky-text-50)' }}>Dribbble</a>
-            <a href="#" className="hover:opacity-100 transition-opacity" style={{ color: 'var(--sky-text-50)' }}>Behance</a>
-            <a href="#" className="hover:opacity-100 transition-opacity" style={{ color: 'var(--sky-text-50)' }}>Twitter</a>
+            <a href="https://www.linkedin.com/in/marouane-ennebly-503481178/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity" style={{ color: 'var(--sky-text-50)' }}>LinkedIn</a>
           </div>
         </motion.div>
       </div>

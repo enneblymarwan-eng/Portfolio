@@ -110,7 +110,7 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
           <SplitText
             key={`line2-${state.id}`}
             text={line2}
-            className="font-['Poppins',sans-serif] font-light text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
+            className="font-['Poppins',sans-serif] font-extralight text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
             delay={30}
             duration={0.8}
             ease="power3.out"
@@ -126,7 +126,7 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
           <SplitText
             key={`line3-${state.id}`}
             text="Outside client work, I'm building Sukoon an AI-powered mental health app for Muslim communities. A space to speak freely, in your language, within your cultural context, without shame. It's the most meaningful thing I'm working on right now."
-            className="font-['Poppins',sans-serif] font-light text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
+            className="font-['Poppins',sans-serif] font-extralight text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
             delay={30}
             duration={0.8}
             ease="power3.out"

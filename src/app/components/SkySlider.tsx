@@ -6,6 +6,8 @@ interface SkySliderProps {
   forceHidden?: boolean;
 }
 
+import { motion } from 'framer-motion';
+
 export function SkySlider({ forceVisible = false, forceHidden = false }: SkySliderProps) {
   const { timeIndex, setTimeIndex, state } = useSky();
   const [hidden, setHidden] = useState(false);
@@ -51,7 +53,12 @@ export function SkySlider({ forceVisible = false, forceHidden = false }: SkySlid
         hidden || forceHidden ? 'hidden-slider pointer-events-none opacity-0' : ''
       }`}
     >
-      <div className="relative w-full h-[60px]">
+      <motion.div 
+        initial={{ y: -50, opacity: 0, filter: 'blur(10px)' }}
+        animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        className="relative w-full h-[60px]"
+      >
         {/* Invisible Range Input for Interaction */}
         <input 
           type="range" 
@@ -121,7 +128,7 @@ export function SkySlider({ forceVisible = false, forceHidden = false }: SkySlid
             }}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

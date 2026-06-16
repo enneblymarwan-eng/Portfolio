@@ -1,7 +1,7 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import gsap from 'gsap';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Puzzle, ArrowUpRight, Users } from 'lucide-react';
+import { Puzzle, ArrowUpRight, Users, X } from 'lucide-react';
 import { FeaturedProject } from './FeaturedProject';
 import { CaseStudyLiveShopping } from './CaseStudyLiveShopping';
 import { CaseStudyAdam } from './CaseStudyAdam';
@@ -58,6 +58,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
   
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const [showCaseStudy, setShowCaseStudy] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [isInitial, setIsInitial] = useState(true);
   const hasOpenedCaseStudy = useRef(false);
 
@@ -209,7 +210,9 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
                   imageSrc={project.imageSrc}
                   videoSrc={project.videoSrc}
                   logoSrc={(project as any).logoSrc}
-                  onExpand={(project as any).isClickable === false ? undefined : () => handleExpand(index)}
+                  onExpand={(project as any).isClickable === false 
+                    ? () => setSelectedVideo(project.videoSrc) 
+                    : () => handleExpand(index)}
                 />
               </div>
             ))}
@@ -339,6 +342,37 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
           ) : (
             <CaseStudyLiveShopping onBack={handleBack} />
           )}
+        </div>
+      )}
+      {/* 3. Video Popup Overlay */}
+      {selectedVideo && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-black/80 backdrop-blur-md"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/80 transition-colors backdrop-blur-md"
+              onClick={() => setSelectedVideo(null)}
+            >
+              <X size={20} />
+            </button>
+            <video 
+              src={selectedVideo} 
+              className="w-full h-full object-contain" 
+              autoPlay 
+              muted 
+              loop
+              playsInline
+            />
+          </motion.div>
         </div>
       )}
     </section>

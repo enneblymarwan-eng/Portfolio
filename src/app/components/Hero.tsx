@@ -122,6 +122,22 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
             textAlign="left"
           />
         </div>
+        <div className="mt-6" style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
+          <SplitText
+            key={`line3-${state.id}`}
+            text="Outside client work, I'm building Sukoon an AI-powered mental health app for Muslim communities. A space to speak freely, in your language, within your cultural context, without shame. It's the most meaningful thing I'm working on right now."
+            className="font-['Poppins',sans-serif] font-light text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
+            delay={30}
+            duration={0.8}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
+            to={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign="left"
+          />
+        </div>
       </motion.div>
     </section>
   );

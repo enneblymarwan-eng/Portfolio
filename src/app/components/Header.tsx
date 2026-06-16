@@ -3,6 +3,7 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router';
 import resumePdf from '../../assets/Marouane Ennebly - Resume.pdf';
+import marwanLogo from '../../assets/marwan-logo.svg';
 
 interface HeaderProps {
   onHomeClick?: () => void;
@@ -25,16 +26,15 @@ export function Header({ onHomeClick }: HeaderProps) {
       className="fixed top-0 left-0 right-0 z-50 w-full px-4 md:px-8 lg:px-16 pt-4 md:pt-6 flex justify-center pointer-events-none"
     >
       <nav
-        className="pointer-events-auto w-full max-w-3xl backdrop-blur-md rounded-full px-4 md:px-6 py-1.5 md:py-1.5 flex items-center justify-between shadow-none navbar border-0"
+        className="pointer-events-auto w-full max-w-3xl backdrop-blur-md rounded-full px-4 md:px-6 py-2.5 md:py-3 flex items-center justify-between shadow-none navbar border-0"
       >
         {/* Logo — always left */}
         <Link
           to="/"
           onClick={handleHomeClick}
-          className="font-['Poppins',sans-serif] font-normal shrink-0"
-          style={{ fontSize: '24px', color: '#ffffff', transition: 'color 0.6s ease' }}
+          className="shrink-0 flex items-center"
         >
-          Marwan.
+          <img src={marwanLogo} alt="Marwan Logo" className="h-[22px] w-auto transition-opacity hover:opacity-80" />
         </Link>
 
         {/* Desktop Navigation — always right */}

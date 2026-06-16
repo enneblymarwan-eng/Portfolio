@@ -169,8 +169,8 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
             className="pointer-events-none absolute bottom-0 right-0 w-48 h-28"
             style={{ background: 'radial-gradient(ellipse at bottom right, rgba(0,251,167,0.18) 0%, transparent 70%)' }}
           />
-          <p className="relative text-[11px] font-normal uppercase tracking-widest text-neutral-400 dark:text-white/35 mb-1.5">Disclaimer</p>
-          <p className="relative text-[13px] font-light leading-[1.8] text-neutral-500 dark:text-white/45">
+          <p className="relative text-[11px] font-normal uppercase tracking-widest text-neutral-600 dark:text-white/35 mb-1.5">Disclaimer</p>
+          <p className="relative text-[13px] font-light leading-[1.8] text-neutral-700 dark:text-white/45">
             This case study focuses on the UX strategy, design decisions, and constraints that shaped Adam. Discovery, research, and client onboarding context have been condensed for brevity. The screens shown reflect the CognitX implementation. Each client deployment is rebranded and customised.
           </p>
         </div>

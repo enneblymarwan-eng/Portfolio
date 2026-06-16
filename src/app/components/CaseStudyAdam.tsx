@@ -26,7 +26,6 @@ const SECTIONS = [
   { id: 'the-collision', label: 'The Collision' },
   { id: 'what-i-explored', label: 'What I Explored Anyway' },
   { id: 'strategy-that-survived', label: 'Strategy That Survived' },
-  { id: 'complexity-behind-simplicity', label: 'Complexity Behind Simplicity' },
   { id: 'the-flows', label: 'The Experience in Motion' },
   { id: 'validating-the-experience', label: 'Validating the Experience' },
   { id: 'what-shipped', label: 'What This Project Became' },
@@ -185,6 +184,9 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
             playsInline
             className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md"
           />
+          <p className="mt-4 text-[12px] md:text-[13px] font-light text-neutral-500 dark:text-white/40 leading-relaxed">
+            The avatar shown here is my recommended design direction. The final shipped product uses a different avatar following a stakeholder decision.
+          </p>
         </div>
 
         {/* ─── THE PROBLEM ─── */}
@@ -349,35 +351,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
           </div>
         </section>
 
-        {/* ─── COMPLEXITY BEHIND SIMPLICITY ─── */}
-        <section id="complexity-behind-simplicity" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
-            Complexity Behind Simplicity
-          </h2>
-          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            A conversational AI agent looks simple on the surface. One widget, one avatar, one booking flow. But designing for real users meant accounting for every way the interaction could break down or go sideways.
-          </p>
-          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            A seemingly simple booking flow required handling:
-          </p>
-          <ul className="list-disc list-inside text-[15px] font-light leading-[1.85] space-y-2 mb-6 text-neutral-600 dark:text-white/70">
-            <li>Language changes mid-conversation</li>
-            <li>Switching between voice and chat without losing context</li>
-            <li>Incomplete or incorrectly formatted user information</li>
-            <li>Unavailable meeting slots</li>
-            <li>Unsupported or out-of-scope requests</li>
-            <li>Connection loss and recovery</li>
-            <li>Human handoff when Adam couldn't resolve the request</li>
-          </ul>
-          <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
-            Each scenario had its own fallback state, its own recovery path, and its own way of keeping the user informed without making them feel like something went wrong. The goal was a system that felt effortless even when it wasn't.
-          </p>
-          <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            Below is a simplified map of how Adam processes a user interaction from entry to resolution.
-          </p>
-        </section>
 
-        <div className="w-full h-px bg-black/5 dark:bg-white/5 my-8" />
 
         {/* ─── THE EXPERIENCE IN MOTION ─── */}
         <section id="the-flows" className="mb-20">

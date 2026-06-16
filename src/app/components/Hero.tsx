@@ -44,7 +44,6 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
 
   // Parallax Scroll Effect
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   useEffect(() => {
@@ -89,7 +88,7 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
 
   return (
     <section ref={sectionRef} className="relative px-4 md:px-8 lg:px-16 pt-[220px] md:pt-[280px] pb-4 md:pb-8 text-left hero-root">
-      <motion.div className="max-w-3xl mx-auto w-full" style={{ y, opacity }}>
+      <motion.div className="max-w-3xl mx-auto w-full" style={{ opacity }}>
         <div style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
           <SplitText
             key={`merged-${state.id}`}

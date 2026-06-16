@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import imgPlaceholder from "../../assets/live-shopping.png"; // Fallback placeholder
 
 interface FeaturedProjectProps {
@@ -15,14 +15,6 @@ interface FeaturedProjectProps {
 export function FeaturedProject({ title, description, status, imageSrc = imgPlaceholder, videoSrc, logoSrc, onExpand }: FeaturedProjectProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ['start end', 'end start']
-  });
-
-  // Smooth parallax effect for the image inside the card
-  const imageY = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
-
   const handleClick = () => {
     if (onExpand) {
       onExpand();
@@ -33,54 +25,50 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
     <div 
       ref={cardRef}
       onClick={handleClick}
-      className={`w-full h-auto md:h-full min-h-[380px] md:min-h-0 rounded-[20px] overflow-hidden bg-black/40 hover:bg-black/60 border border-white/5 border-dashed outline-none transition-all duration-300 flex flex-col md:flex-row relative shadow-[0_4px_20px_rgba(0,0,0,0.15)] group ${onExpand ? 'cursor-pointer hover:scale-[1.01]' : ''}`}
+      className={`w-full h-full min-h-[380px] md:min-h-[420px] rounded-[20px] overflow-hidden bg-black/40 hover:bg-black/60 border border-white/5 border-dashed outline-none transition-all duration-300 relative shadow-[0_4px_20px_rgba(0,0,0,0.15)] group ${onExpand ? 'cursor-pointer hover:scale-[1.01]' : ''}`}
     >
-      {/* Image/Video Container (Left on desktop) */}
-      <div className="w-full h-[180px] p-2 md:h-full md:absolute md:left-0 md:top-0 md:p-1 md:w-[45%] shrink-0 block">
-        <div className="w-full h-full overflow-hidden rounded-[16px] relative">
-          {videoSrc ? (
-            <motion.video
-              src={videoSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ y: imageY, scale: 1.05 }}
-              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-[1.1]"
-            />
-          ) : (
-            <motion.img 
-              src={imageSrc} 
-              alt="Project Preview" 
-              style={{ y: imageY, scale: 1.05 }}
-              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-[1.1]"
-            />
-          )}
-          {/* Subtle gradient overlay to blend edge */}
-          <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent opacity-0 md:opacity-100 mix-blend-overlay pointer-events-none" />
-        </div>
+      {/* Background Image/Video Container */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        {videoSrc ? (
+          <video
+            src={videoSrc}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-[1.05]"
+          />
+        ) : (
+          <img 
+            src={imageSrc} 
+            alt="Project Preview" 
+            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-[1.05]"
+          />
+        )}
       </div>
 
-      {/* Text Content (Right on desktop) */}
-      <div className="w-full md:w-[55%] md:ml-auto p-5 md:py-6 md:pr-6 md:pl-10 pt-2 md:pt-6 flex flex-col justify-between z-10">
+      {/* Gradient overlay from bottom */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+
+      {/* Foreground Text Content */}
+      <div className="absolute inset-0 z-10 p-6 md:p-8 flex flex-col justify-end">
         <div>
           {logoSrc && (
             <img 
               src={logoSrc} 
               alt="Client Logo" 
-              className="h-[18px] w-auto object-contain object-left mb-3" 
+              className="h-[20px] md:h-[24px] w-auto object-contain object-left mb-4 drop-shadow-md" 
             />
           )}
           <h3 
-            className="font-['Poppins',sans-serif] font-medium mb-2"
-            style={{ fontSize: '15px', lineHeight: 1.4, color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
+            className="font-['Poppins',sans-serif] font-medium mb-2 text-white drop-shadow-md"
+            style={{ fontSize: '18px', lineHeight: 1.4 }}
           >
             {title}
           </h3>
           {description && (
             <p 
-              className="font-['Poppins',sans-serif] font-light text-[11px] md:text-[12px] leading-relaxed line-clamp-2 md:line-clamp-3"
-              style={{ color: 'var(--sky-text-70)', transition: 'color 0.6s ease' }}
+              className="font-['Poppins',sans-serif] font-light text-[12px] md:text-[13px] leading-relaxed text-white/80 line-clamp-2 md:line-clamp-3 max-w-2xl drop-shadow-md"
             >
               {description}
             </p>
@@ -88,15 +76,10 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
         </div>
         
         {/* Status */}
-        <div className="flex items-center gap-3 mt-4 self-start">
+        <div className="flex items-center gap-3 mt-5 self-start">
           {status && (
             <div 
-              className="px-3 py-1 rounded-full border text-[10px] uppercase tracking-wider font-medium transition-colors duration-600"
-              style={{
-                borderColor: 'var(--sky-border)',
-                color: 'var(--sky-text-80)',
-                backgroundColor: 'var(--sky-surface)'
-              }}
+              className="px-3.5 py-1.5 rounded-full border border-white/20 bg-black/30 backdrop-blur-md text-white text-[10px] uppercase tracking-wider font-medium shadow-sm transition-colors duration-600"
             >
               {status}
             </div>

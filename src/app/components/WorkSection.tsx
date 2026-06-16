@@ -62,15 +62,6 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
   const [isInitial, setIsInitial] = useState(true);
   const hasOpenedCaseStudy = useRef(false);
 
-  // Parallax for inner sections
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-  
-  const ySide = useTransform(scrollYProgress, [0, 1], [0, -20]);
-  const yTools = useTransform(scrollYProgress, [0, 1], [0, -40]);
-
   // Lock body scroll when case study is active
   useEffect(() => {
     if (showCaseStudy) {
@@ -83,21 +74,10 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
     };
   }, [showCaseStudy]);
 
-  // Page load entrance: slide up from bottom
+  // Page load entrance: simple CSS transition (no GSAP to avoid backdrop-blur glitch)
   useEffect(() => {
-    if (containerRef.current) {
-      setIsInitial(false);
-      gsap.fromTo(containerRef.current,
-        { opacity: 0, y: 60 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 1.0, 
-          ease: 'power4.out', 
-          delay: 0.1
-        }
-      );
-    }
+    const timer = setTimeout(() => setIsInitial(false), 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleExpand = useCallback((index: number) => {
@@ -185,24 +165,24 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
     >
       <div
         ref={containerRef}
-        className={`w-full flex flex-col gap-6 ${
-          isInitial ? 'opacity-0 translate-y-16 pointer-events-none' : ''
+        className={`w-full flex flex-col gap-6 transition-all duration-700 ease-out ${
+          isInitial ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
         }`}
       >
         {/* 1. Card List Container */}
-        <motion.div
-          className="max-w-3xl mx-auto w-full backdrop-blur-2xl border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-black/65"
+        <div
+          className="max-w-3xl mx-auto w-full border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-[#111111]/95"
         >
           <p
             className="font-['Poppins',sans-serif] font-normal mb-4 px-4 pt-3 work-title"
-            style={{ fontSize: '30px', color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
+            style={{ fontSize: '24px', color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
           >
             Work
           </p>
 
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex flex-col gap-4 w-full">
             {projects.map((project, index) => (
-              <div key={index} className="h-auto md:h-[220px] w-full">
+              <div key={index} className="w-full">
                 <FeaturedProject
                   title={project.title}
                   description={project.description}
@@ -217,10 +197,10 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* 2. Side Projects Container */}
-        <motion.div style={{ y: ySide }} className="max-w-3xl mx-auto w-full backdrop-blur-2xl border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-black/65 transform-gpu isolate">
+        <div className="max-w-3xl mx-auto w-full border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-[#111111]/95">
           <p
             className="font-['Poppins',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
             style={{ fontSize: '24px', color: 'var(--sky-text-80)', transition: 'color 0.6s ease' }}
@@ -277,10 +257,10 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
                </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* 3. Tools & Experiments Container */}
-        <motion.div style={{ y: yTools }} className="max-w-3xl mx-auto w-full backdrop-blur-2xl border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-black/65 transform-gpu isolate">
+        <div className="max-w-3xl mx-auto w-full border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-[#111111]/95">
           <p
             className="font-['Poppins',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
             style={{ fontSize: '24px', color: 'var(--sky-text-80)', transition: 'color 0.6s ease' }}
@@ -326,7 +306,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
               </div>
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* 2. Case Study Overlay */}

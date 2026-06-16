@@ -49,8 +49,10 @@ export function SkySlider({ forceVisible = false, forceHidden = false }: SkySlid
 
   return (
     <div 
-      className={`fixed left-1/2 -translate-x-1/2 z-40 w-full max-w-3xl px-6 md:px-10 pointer-events-auto flex justify-center opacity-90 hover:opacity-100 sky-slider-container ${
-        hidden || forceHidden ? 'hidden-slider pointer-events-none opacity-0' : ''
+      className={`fixed top-[75px] md:top-[85px] left-1/2 z-40 w-full max-w-3xl px-6 md:px-10 pointer-events-auto flex justify-center transition-all duration-500 ease-out transform-gpu will-change-transform ${
+        hidden || forceHidden 
+          ? '-translate-y-[150px] -translate-x-1/2 opacity-0 pointer-events-none' 
+          : '-translate-x-1/2 translate-y-0 opacity-90 hover:opacity-100'
       }`}
     >
       <motion.div 

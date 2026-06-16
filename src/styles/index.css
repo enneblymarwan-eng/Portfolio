@@ -109,20 +109,7 @@
     background: #222222 !important;
   }
 
-  .sky-slider-container {
-    top: 75px;
-    transition: top 0.5s ease-in-out, opacity 0.3s ease;
-  }
-  .sky-slider-container.hidden-slider {
-    top: -80px;
-  }
-}
 
-@media (min-width: 768px) {
-  .sky-slider-container:not(.hidden-slider) {
-    top: 85px;
-  }
-}
 
 .work-main-card {
   transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 

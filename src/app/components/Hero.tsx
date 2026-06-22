@@ -15,23 +15,23 @@ const GREETINGS: Record<string, string> = {
 const DESCRIPTIONS: Record<string, { line1: string; line2: string }> = {
   dawn: {
     line1: "",
-    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. Since you're already ahead of schedule, let's make something worthwhile."
+    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   morning: {
     line1: "",
-    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. If you have a problem worth solving, let's talk."
+    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   midday: {
     line1: "",
-    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. If you have a problem worth solving, let's talk."
+    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   golden: {
     line1: "",
-    line2: "I'm Marwan, a product designer based in Casablanca. After 7 years in this craft, I still get excited about a blank frame and a hard problem. That probably won't change."
+    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   dusk: {
     line1: "",
-    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. If you're building something meaningful, I'd love to hear about it."
+    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   }
 };
 
@@ -87,13 +87,15 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
   }, [hidden]);
 
   return (
-    <section ref={sectionRef} className="relative px-1 md:px-8 lg:px-16 pt-[220px] md:pt-[280px] pb-4 md:pb-8 text-left hero-root">
+    <section ref={sectionRef} className="relative px-1 md:px-8 lg:px-16 pt-[220px] md:pt-[280px] pb-4 md:pb-8 text-center hero-root">
       <motion.div className="max-w-3xl mx-auto w-full px-0" style={{ opacity }}>
+
+        {/* Greeting (time-adaptive) */}
         <div style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
           <SplitText
             key={`merged-${state.id}`}
             text={line1 ? `${greeting}\n${line1}` : greeting}
-            className="font-['Faculty_Glyphic',sans-serif] font-extralight text-[26px] md:text-[32px] leading-[34px] md:leading-[40px] tracking-tight whitespace-pre-line"
+            className="font-['Faculty_Glyphic',sans-serif] font-extralight text-[28px] md:text-[40px] leading-[36px] md:leading-[50px] tracking-tight whitespace-pre-line"
             delay={30}
             duration={0.8}
             ease="power3.out"
@@ -102,14 +104,16 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
             to={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             threshold={0.1}
             rootMargin="-50px"
-            textAlign="left"
+            textAlign="center"
           />
         </div>
-        <div className="mt-8" style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
+
+        {/* Description */}
+        <div className="mt-8 max-w-xl mx-auto" style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
           <SplitText
             key={`line2-${state.id}`}
             text={line2}
-            className="font-['Poppins',sans-serif] font-extralight text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
+            className="font-['Poppins',sans-serif] font-extralight text-[14px] md:text-[16px] leading-[22px] md:leading-[26px] tracking-[-0.01em]"
             delay={30}
             duration={0.8}
             ease="power3.out"
@@ -118,25 +122,51 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
             to={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             threshold={0.1}
             rootMargin="-50px"
-            textAlign="left"
+            textAlign="center"
           />
         </div>
-        <div className="mt-6" style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
-          <SplitText
-            key={`line3-${state.id}`}
-            text="Outside client work, I'm building Sukoon an AI-powered mental health app for Muslim communities. A space to speak freely, in your language, within your cultural context, without shame. It's the most meaningful thing I'm working on right now."
-            className="font-['Poppins',sans-serif] font-extralight text-[16px] md:text-[20px] leading-[26px] md:leading-[28px] tracking-[-0.01em]"
-            delay={30}
-            duration={0.8}
-            ease="power3.out"
-            splitType="words"
-            from={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
-            to={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            threshold={0.1}
-            rootMargin="-50px"
-            textAlign="left"
-          />
-        </div>
+
+        {/* Expertise Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-10 flex items-center justify-center gap-4 md:gap-6"
+          style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
+        >
+          {['7+ Years', 'AI Products', 'Enterprise SaaS', 'End-To-End Design'].map((item, i, arr) => (
+            <span key={item} className="flex items-center gap-4 md:gap-6">
+              <span className="font-['Poppins',sans-serif] text-[12px] md:text-[14px] font-light tracking-wide opacity-70">
+                {item}
+              </span>
+              {i < arr.length - 1 && (
+                <span className="opacity-30 text-[14px] font-extralight">|</span>
+              )}
+            </span>
+          ))}
+        </motion.div>
+
+        {/* Availability Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.8, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 inline-flex items-center gap-3 px-8 py-3 rounded-full"
+          style={{ 
+            backgroundColor: 'rgba(0, 0, 0, 0.85)', 
+            color: '#ffffff',
+            transition: 'all 0.6s ease' 
+          }}
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span className="font-['Poppins',sans-serif] text-[12px] md:text-[13px] font-medium tracking-wide">
+            Available For Remote Opportunities · Casablanca · GMT+1
+          </span>
+        </motion.div>
+
       </motion.div>
     </section>
   );

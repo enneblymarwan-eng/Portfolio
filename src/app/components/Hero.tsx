@@ -15,7 +15,7 @@ const GREETINGS: Record<string, string> = {
 const DESCRIPTIONS: Record<string, { line1: string; line2: string }> = {
   dawn: {
     line1: "",
-    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. Since you're already ahead of schedule — let's make something worthwhile."
+    line2: "I'm Marwan, a product designer based in Casablanca. Seven years of shipped products, real users, and design decisions that hold up when you zoom in. Since you're already ahead of schedule, let's make something worthwhile."
   },
   morning: {
     line1: "",
@@ -87,13 +87,13 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
   }, [hidden]);
 
   return (
-    <section ref={sectionRef} className="relative px-4 md:px-8 lg:px-16 pt-[220px] md:pt-[280px] pb-4 md:pb-8 text-left hero-root">
-      <motion.div className="max-w-3xl mx-auto w-full" style={{ opacity }}>
+    <section ref={sectionRef} className="relative px-1 md:px-8 lg:px-16 pt-[220px] md:pt-[280px] pb-4 md:pb-8 text-left hero-root">
+      <motion.div className="max-w-3xl mx-auto w-full px-0" style={{ opacity }}>
         <div style={{ color: 'var(--sky-text)', transition: 'color 0.6s ease' }}>
           <SplitText
             key={`merged-${state.id}`}
             text={line1 ? `${greeting}\n${line1}` : greeting}
-            className="font-['Poppins',sans-serif] font-extralight text-[26px] md:text-[32px] leading-[34px] md:leading-[40px] tracking-tight whitespace-pre-line"
+            className="font-['Faculty_Glyphic',sans-serif] font-extralight text-[26px] md:text-[32px] leading-[34px] md:leading-[40px] tracking-tight whitespace-pre-line"
             delay={30}
             duration={0.8}
             ease="power3.out"

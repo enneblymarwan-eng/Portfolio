@@ -61,7 +61,7 @@ export function FeaturedProject({ title, description, status, imageSrc = imgPlac
             />
           )}
           <h3 
-            className="font-['Poppins',sans-serif] font-medium mb-2 text-white drop-shadow-md"
+            className="font-['Faculty_Glyphic',sans-serif] font-medium mb-2 text-white drop-shadow-md"
             style={{ fontSize: '18px', lineHeight: 1.4 }}
           >
             {title}

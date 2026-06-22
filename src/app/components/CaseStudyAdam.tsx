@@ -129,14 +129,14 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* Title */}
         <h1
-          className="text-[36px] md:text-[48px] font-normal leading-[1.1] mb-4 tracking-tight text-left text-neutral-900 dark:text-white transition-colors duration-500"
+          className="font-['Faculty_Glyphic',sans-serif] text-[36px] md:text-[48px] font-normal leading-[1.1] mb-4 tracking-tight text-left text-neutral-900 dark:text-white transition-colors duration-500"
         >
-          Adam — Conversational AI Agent for Enterprise
+          Adam, Conversational AI Agent for Enterprise
         </h1>
         <p
           className="text-base md:text-lg font-light mb-16 text-left max-w-lg leading-relaxed text-neutral-600 dark:text-white/70 transition-colors duration-500"
         >
-          Conversational AI agent live across 17 countries — designed through stakeholder conflict and real constraints.
+          Conversational AI agent live across 17 countries, designed through stakeholder conflict and real constraints.
         </p>
 
         {/* Meta */}
@@ -191,11 +191,11 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── THE PROBLEM ─── */}
         <section id="the-problem" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             The Problem
           </h2>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            Leyton Cognitive, the AI advisory arm of Leyton, serves enterprise clients in 17 countries. Their commercial teams were spending significant time handling repetitive inquiries, scheduling meetings, and managing inbound calls—tasks that were scalable with AI, but only if users trusted the experience enough to rely on it.
+            Leyton Cognitive, the AI advisory arm of Leyton, serves enterprise clients in 17 countries. Their commercial teams were spending significant time handling repetitive inquiries, scheduling meetings, and managing inbound calls, tasks that were scalable with AI, but only if users trusted the experience enough to rely on it.
           </p>
           <p className="text-[15px] font-light leading-[1.85] mt-4 text-neutral-600 dark:text-white/70">
             I was the sole designer responsible for everything: UX strategy, conversational flows, interaction design, avatar direction, and internal configuration tooling.
@@ -204,7 +204,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── WHO WE'RE DESIGNING FOR ─── */}
         <section id="who-we-designing-for" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             Who We're Designing For
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
@@ -223,7 +223,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── MEASURING SUCCESS ─── */}
         <section id="measuring-success" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             Measuring Success with the NN/g Framework
           </h2>
           <div className="mb-6">
@@ -239,7 +239,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── FOUR PRINCIPLES ─── */}
         <section id="four-principles" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             Four Principles, Every Decision
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
@@ -260,7 +260,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── THE COLLISION ─── */}
         <section id="the-collision" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             The Collision
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
@@ -276,7 +276,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── WHAT I EXPLORED ANYWAY ─── */}
         <section id="what-i-explored" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             What I Explored Anyway
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
@@ -293,13 +293,13 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
             <img src={imgExplored3} alt="Avatar Direction Exploration 3" className="w-full rounded-[16px] border border-black/5 dark:border-white/5 shadow-md" />
           </div>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            The abstract orb was my recommendation. No humanoid features, no uncanny valley risk — just presence without pretense. The robot was my preferred fallback: humanoid enough to feel personal, abstract enough to avoid the discomfort that comes with an almost-real face. Neither won.
+            The abstract orb was my recommendation. No humanoid features, no uncanny valley risk, just presence without pretense. The robot was my preferred fallback: humanoid enough to feel personal, abstract enough to avoid the discomfort that comes with an almost-real face. Neither won.
           </p>
         </section>
 
         {/* ─── STRATEGY THAT SURVIVED ─── */}
         <section id="strategy-that-survived" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             Strategy That Survived
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-12 text-neutral-600 dark:text-white/70">
@@ -355,7 +355,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── THE EXPERIENCE IN MOTION ─── */}
         <section id="the-flows" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             The Experience in Motion
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-6 text-neutral-600 dark:text-white/70">
@@ -372,13 +372,13 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
             />
           </div>
           <p className="text-[15px] font-light leading-[1.85] text-neutral-600 dark:text-white/70">
-            The walkthrough below gives you a feel for the interaction — Adam responding in real time, across both chat and voice. The full flows, edge cases, and fallback states are covered in the sections above.
+            The walkthrough below gives you a feel for the interaction, Adam responding in real time, across both chat and voice. The full flows, edge cases, and fallback states are covered in the sections above.
           </p>
         </section>
 
         {/* ─── VALIDATING THE EXPERIENCE ─── */}
         <section id="validating-the-experience" className="mb-20">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             Validating the Experience
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">
@@ -397,7 +397,7 @@ export function CaseStudyAdam({ onBack }: CaseStudyInlineProps) {
 
         {/* ─── WHAT THIS PROJECT BECAME ─── */}
         <section id="what-shipped" className="mb-16">
-          <h2 className="text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
+          <h2 className="font-['Faculty_Glyphic',sans-serif] text-xl md:text-2xl font-normal mb-5 tracking-tight text-neutral-900 dark:text-white">
             What This Project Became
           </h2>
           <p className="text-[15px] font-light leading-[1.85] mb-4 text-neutral-600 dark:text-white/70">

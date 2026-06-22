@@ -20,15 +20,15 @@ import figmaIcon from "../../assets/Logos/figma.svg";
 
 const projects = [
   {
-    title: "Adam — Conversational AI Agent for Enterprise",
-    description: "Conversational AI agent live across 17 countries — designed through stakeholder conflict and real constraints.",
+    title: "Adam, Conversational AI Agent for Enterprise",
+    description: "Conversational AI agent live across 17 countries, designed through stakeholder conflict and real constraints.",
     status: "Live",
     imageSrc: adamB2BPreview,
     videoSrc: videoHeroAdam,
     logoSrc: cognitexLogo
   },
   {
-    title: "Live Shopping — Reducing Friction at the Moment of Purchase",
+    title: "Live Shopping, Reducing Friction at the Moment of Purchase",
     description: "Redesigning live shopping to reduce drop-off and remove friction at the moment of purchase.",
     status: "Case Study",
     imageSrc: liveShoppingPreview,
@@ -36,8 +36,8 @@ const projects = [
     logoSrc: hseLogo
   },
   {
-    title: "Stargate — AI Platform for Internal Tool Discovery",
-    description: "Helping consultants find the right internal tool for the job — powered by AI, built for the way they actually work.",
+    title: "Stargate, AI Platform for Internal Tool Discovery",
+    description: "Helping consultants find the right internal tool for the job, powered by AI, built for the way they actually work.",
     status: "COMING SOON",
     videoSrc: videoStargate,
     logoSrc: leytonLogo,
@@ -161,7 +161,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
   return (
     <section
       ref={sectionRef}
-      className="w-full relative text-left z-10 pb-24 md:pb-32 work-section-container scroll-mt-24 pt-12 md:pt-16"
+      className="w-full relative text-left z-10 pb-24 md:pb-32 work-section-container scroll-mt-24 pt-12 md:pt-16 px-1 md:px-8 lg:px-16"
     >
       <div
         ref={containerRef}
@@ -174,7 +174,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
           className="max-w-3xl mx-auto w-full border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-[#111111]/95"
         >
           <p
-            className="font-['Poppins',sans-serif] font-normal mb-4 px-4 pt-3 work-title"
+            className="font-['Faculty_Glyphic',sans-serif] font-normal mb-4 px-4 pt-3 work-title"
             style={{ fontSize: '24px', color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
           >
             Work
@@ -202,7 +202,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
         {/* 2. Side Projects Container */}
         <div className="max-w-3xl mx-auto w-full border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-[#111111]/95">
           <p
-            className="font-['Poppins',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
+            className="font-['Faculty_Glyphic',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
             style={{ fontSize: '24px', color: 'var(--sky-text-80)', transition: 'color 0.6s ease' }}
           >
             Side Projects
@@ -218,7 +218,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
                
                {/* Content */}
                <div className="flex flex-col flex-grow">
-                 <h3 className="text-white font-['Poppins',sans-serif] font-medium text-[18px] tracking-tight mb-1">Sukoon — Mental Health for the Muslim World</h3>
+                 <h3 className="text-white font-['Faculty_Glyphic',sans-serif] font-medium text-[18px] tracking-tight mb-1">Sukoon, Mental Health for the Muslim World</h3>
                  <p className="text-white/60 font-['Poppins',sans-serif] font-light text-[13px] leading-relaxed mb-4">
                    Breaking the stigma around mental health in Muslim communities through an AI-powered space to speak freely, in your language, within your cultural context.
                  </p>
@@ -242,9 +242,9 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
                
                {/* Content */}
                <div className="flex flex-col flex-grow">
-                 <h3 className="text-white font-['Poppins',sans-serif] font-medium text-[18px] tracking-tight mb-1">CrewPave — Asphalt Calculator for Construction Teams</h3>
+                 <h3 className="text-white font-['Faculty_Glyphic',sans-serif] font-medium text-[18px] tracking-tight mb-1">CrewPave, Asphalt Calculator for Construction Teams</h3>
                  <p className="text-white/60 font-['Poppins',sans-serif] font-light text-[13px] leading-relaxed mb-4">
-                   Helping foremen and contractors calculate asphalt needs accurately using satellite imagery — removing guesswork from the job site.
+                   Helping foremen and contractors calculate asphalt needs accurately using satellite imagery, removing guesswork from the job site.
                  </p>
                  <div className="flex items-center gap-2 mt-auto self-start">
                    <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-white/80 text-[10px] font-medium uppercase tracking-widest shadow-sm backdrop-blur-md">
@@ -262,7 +262,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
         {/* 3. Tools & Experiments Container */}
         <div className="max-w-3xl mx-auto w-full border border-[var(--sky-border)] rounded-[28px] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.3)] flex flex-col work-main-card bg-[#111111]/95">
           <p
-            className="font-['Poppins',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
+            className="font-['Faculty_Glyphic',sans-serif] font-normal mb-3 px-4 pt-3 work-title"
             style={{ fontSize: '24px', color: 'var(--sky-text-80)', transition: 'color 0.6s ease' }}
           >
             Tools & Experiments
@@ -282,7 +282,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
 
               {/* Content */}
               <div className="flex flex-col flex-grow min-w-0 pr-8 md:pr-0">
-                <h3 className="text-white font-['Poppins',sans-serif] font-medium text-[20px] tracking-tight mb-1">Tooltipo</h3>
+                <h3 className="text-white font-['Faculty_Glyphic',sans-serif] font-medium text-[20px] tracking-tight mb-1">Tooltipo</h3>
                 <p className="text-white/60 font-['Poppins',sans-serif] font-light text-[14px] leading-relaxed mb-3">
                   A Figma plugin for crafting and managing tooltips seamlessly within your design workflow.
                 </p>
@@ -314,7 +314,7 @@ export function WorkSection({ cloudFilter = 'none', caseStudyOpen, onCaseStudyCh
         <div
           ref={overlayRef}
           key="case-study-overlay"
-          className="fixed inset-4 bg-white/70 dark:bg-black/65 backdrop-blur-2xl z-30 rounded-[28px] border border-black/10 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden pointer-events-auto"
+          className="fixed inset-1 md:inset-4 bg-white/70 dark:bg-black/65 backdrop-blur-2xl z-30 rounded-[28px] border border-black/10 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden pointer-events-auto"
           style={{ opacity: 0, transform: 'translateY(100px)' }}
         >
           {expandedProject === 0 ? (

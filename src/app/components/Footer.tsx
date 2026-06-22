@@ -13,7 +13,7 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="font-['Poppins',sans-serif] text-3xl md:text-5xl mb-6 tracking-tight"
+          className="font-['Faculty_Glyphic',sans-serif] text-3xl md:text-5xl mb-6 tracking-tight"
           style={{ lineHeight: "1.2", color: 'var(--sky-text)', transition: 'color 0.6s ease' }}
         >
           Let's build something <br className="hidden md:block"/> extraordinary together.

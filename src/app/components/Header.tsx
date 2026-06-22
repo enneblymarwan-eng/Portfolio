@@ -19,7 +19,7 @@ export function Header({ onHomeClick }: HeaderProps) {
   };
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -50, opacity: 0, filter: 'blur(10px)' }}
       animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
       transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -34,7 +34,7 @@ export function Header({ onHomeClick }: HeaderProps) {
           onClick={handleHomeClick}
           className="shrink-0 flex items-center"
         >
-          <img src={marwanLogo} alt="Marwan Logo" className="h-[22px] w-auto transition-opacity hover:opacity-80" />
+          <img src={marwanLogo} alt="Marwan Logo" className="h-[30px] w-auto transition-opacity hover:opacity-80" />
         </Link>
 
         {/* Desktop Navigation — always right */}

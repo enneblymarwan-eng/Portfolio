@@ -106,12 +106,12 @@ export function SkySlider({ forceVisible = false, forceHidden = false }: SkySlid
               >
                 {/* Vertical Tick Mark intercepting the curve */}
                 <div 
-                  className={`w-[1px] h-[16px] bg-white/40 transition-all duration-300 ${isActive ? 'opacity-0 scale-y-50' : 'opacity-100 scale-y-100'}`} 
+                  className={`w-[1px] h-[12px] md:h-[16px] bg-white/40 transition-all duration-300 ${isActive ? 'opacity-0 scale-y-50' : 'opacity-100 scale-y-100'}`} 
                 />
                 
                 {/* Label positioned dynamically beneath */}
                 <span 
-                  className={`absolute top-full mt-[12px] font-['Poppins',sans-serif] whitespace-nowrap transition-all duration-[600ms] ${isActive ? 'text-[15px] md:text-[16px] font-normal' : 'text-[12px] md:text-[13px] font-light'}`}
+                  className={`absolute top-full mt-[8px] md:mt-[12px] font-['Poppins',sans-serif] whitespace-nowrap transition-all duration-[600ms] ${isActive ? 'text-[13px] md:text-[15px] font-normal' : 'text-[11px] md:text-[12px] font-light'}`}
                   style={{ color: isActive ? 'var(--sky-text)' : 'var(--sky-text-50)', transition: 'color 0.6s ease' }}
                 >
                   {s.label}
@@ -122,7 +122,7 @@ export function SkySlider({ forceVisible = false, forceHidden = false }: SkySlid
 
           {/* Smooth Gliding Visual Thumb */}
           <div 
-            className="absolute w-[20px] h-[20px] bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-[400ms] ease-out pointer-events-none"
+            className="absolute w-[16px] h-[16px] md:w-[20px] md:h-[20px] bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-[400ms] ease-out pointer-events-none"
             style={{
               left: `${(timeIndex / 4) * 100}%`,
               top: `${state.y}px`,

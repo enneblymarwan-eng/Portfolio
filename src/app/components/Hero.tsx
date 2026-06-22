@@ -15,23 +15,23 @@ const GREETINGS: Record<string, string> = {
 const DESCRIPTIONS: Record<string, { line1: string; line2: string }> = {
   dawn: {
     line1: "",
-    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   morning: {
     line1: "",
-    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   midday: {
     line1: "",
-    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   golden: {
     line1: "",
-    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   },
   dusk: {
     line1: "",
-    line2: "Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
   }
 };
 
@@ -152,10 +152,10 @@ export function Hero({ hidden = false }: { hidden?: boolean }) {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 inline-flex items-center gap-3 px-8 py-3 rounded-full"
-          style={{ 
-            backgroundColor: 'rgba(0, 0, 0, 0.85)', 
+          style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
             color: '#ffffff',
-            transition: 'all 0.6s ease' 
+            transition: 'all 0.6s ease'
           }}
         >
           <span className="relative flex h-2.5 w-2.5">

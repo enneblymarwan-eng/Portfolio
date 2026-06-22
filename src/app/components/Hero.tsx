@@ -5,11 +5,11 @@ import { useSky } from '../SkyContext';
 import { motion, useScroll, useTransform } from 'motion/react';
 
 const GREETINGS: Record<string, string> = {
-  dawn: "You're up before the sun. Respect.",
-  morning: "Good Morning. Coffee's brewing, ideas are moving.",
-  midday: "Good Afternoon. Peak hours. Let's not waste them.",
-  golden: "Golden Hour. The best ideas look obvious in hindsight.",
-  dusk: "Good Evening. Still here? So am I.",
+  dawn: "You're up before the sun.\nRespect.",
+  morning: "Good Morning.\nCoffee's brewing, ideas are moving.",
+  midday: "Good Afternoon.\nPeak hours. Let's not waste them.",
+  golden: "Golden Hour.\nThe best ideas look obvious in hindsight.",
+  dusk: "Good Evening.\nStill here? So am I.",
 };
 
 const DESCRIPTIONS: Record<string, { line1: string; line2: string }> = {

@@ -170,7 +170,7 @@ const SplitText = ({
         textAlign,
         overflow: 'hidden',
         display: 'inline-block',
-        whiteSpace: 'normal' as const,
+        whiteSpace: 'pre-line' as const,
         wordWrap: 'break-word' as const,
         willChange: 'transform, opacity'
       }}

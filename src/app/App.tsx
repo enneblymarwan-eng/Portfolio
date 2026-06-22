@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { SkySlider } from './components/SkySlider';
 import { useSky } from './SkyContext';
 import Galaxy from './components/Galaxy';
+import { SmoothCursor } from './components/SmoothCursor';
 
 
 export default function App() {
@@ -95,6 +96,8 @@ export default function App() {
 
       {/* Decorative Shooting Stars */}
       <DecorativeElements />
+
+      <SmoothCursor />
 
       {/* Main Content */}
       <div className="relative z-10">

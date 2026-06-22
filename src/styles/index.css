@@ -6,6 +6,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* SmoothCursor styles */
+*:not([data-hide-cursor="true"]):not([data-hide-cursor="true"] *) {
+  cursor: none !important;
+}
+
+input,
+textarea,
+select {
+  cursor: text !important;
+}
+
 /* Cloud drift animations */
 @keyframes cloud-fade-in {
   0% { opacity: 0; }

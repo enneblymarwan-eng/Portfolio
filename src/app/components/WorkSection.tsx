@@ -17,6 +17,8 @@ import tolotipoLogo from "../../assets/Logos/tolotipo.png";
 import cognitexLogo from "../../assets/Logos/Cognitex logo.svg";
 import hseLogo from "../../assets/Logos/Hse.png";
 import figmaIcon from "../../assets/Logos/figma.svg";
+import videoSparkAcademy from "../../assets/Spark Academy/Whowe are.mp4";
+import sparkAcademyLogo from "../../assets/Spark Academy/spark academy logo.svg";
 
 const projects = [
   {
@@ -26,6 +28,14 @@ const projects = [
     imageSrc: adamB2BPreview,
     videoSrc: videoHeroAdam,
     logoSrc: cognitexLogo
+  },
+  {
+    title: "Spark Academy — Identity, Design & Dev",
+    description: "End-to-end brand identity, website design, and webflow development for a language school serving kids, professionals, and everyone in between.",
+    status: "COMING SOON",
+    videoSrc: videoSparkAcademy,
+    logoSrc: sparkAcademyLogo,
+    isClickable: false
   },
   {
     title: "Live Shopping, Reducing Friction at the Moment of Purchase",

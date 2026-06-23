@@ -15,23 +15,23 @@ const GREETINGS: Record<string, string> = {
 const DESCRIPTIONS: Record<string, { line1: string; line2: string }> = {
   dawn: {
     line1: "",
-    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi, I'm Marwan. I design AI-powered products, enterprise tools, and mobile apps that turn complex workflows into experiences people understand instantly."
   },
   morning: {
     line1: "",
-    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi, I'm Marwan. I design AI-powered products, enterprise tools, and mobile apps that turn complex workflows into experiences people understand instantly."
   },
   midday: {
     line1: "",
-    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi, I'm Marwan. I design AI-powered products, enterprise tools, and mobile apps that turn complex workflows into experiences people understand instantly."
   },
   golden: {
     line1: "",
-    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi, I'm Marwan. I design AI-powered products, enterprise tools, and mobile apps that turn complex workflows into experiences people understand instantly."
   },
   dusk: {
     line1: "",
-    line2: "Hi I'm Marwan, I design AI-powered and enterprise products that turn complex workflows into experiences people understand instantly."
+    line2: "Hi, I'm Marwan. I design AI-powered products, enterprise tools, and mobile apps that turn complex workflows into experiences people understand instantly."
   }
 };
 
